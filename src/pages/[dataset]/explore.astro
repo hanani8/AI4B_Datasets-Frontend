@@ -1,0 +1,31 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import DatasetTable from "../../components/DatasetTable.astro";
+import type { Dataset } from "../../types";
+import NavBar from "../../components/NavBar.astro";
+
+export async function getStaticPaths() {
+  const url = import.meta.env.PUBLIC_API_URL;
+  const response = await fetch(url + "/datasets");
+  const datasets: Dataset[] = await response.json();
+  return datasets.map((dataset) => ({
+    params: { dataset: dataset.name },
+    props: { dataset },
+  }));
+}
+
+const { dataset } = Astro.props;
+---
+
+<Layout title={`Explore ${dataset.name}`}>
+  <NavBar
+    title={dataset.name}
+    home_link=`/${dataset.name}`
+    links={[
+      { name: "Explore", link: `/${dataset.name}/explore` },
+      { name: "Download", link: `/${dataset.name}/download ` },
+    ]}
+  />
+  <div class="divider"><span class="font-bold">Data</span></div>
+  <DatasetTable dataset={dataset} url={import.meta.env.PUBLIC_API_URL} />
+</Layout>

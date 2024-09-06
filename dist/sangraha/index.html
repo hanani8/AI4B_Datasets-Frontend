@@ -1,0 +1,233 @@
+<!DOCTYPE html><html lang="en" data-theme="mytheme"> <head><meta charset="UTF-8"><meta name="description" content="AI4Bharat Datasets"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v4.14.5"><!-- Add this to your HTML file --><!-- <link
+s      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+    /> --><script type="module" src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script><title>sangraha</title><link rel="stylesheet" href="/astro/explore.D-UsDqG8.css"></head> <body class="container mx-auto px-4 mb-4 md:mb-8">  <div class="navbar bg-base-100"> <div class="flex-1"> <a href="/sangraha" class="text-3xl font-bold bg-gradient-to-r from-orange-600 via-red-500 to-black inline-block text-transparent bg-clip-text">sangraha</a> </div> <div class="flex-none"> <ul class="menu menu-horizontal px-1"> <li><a href="/sangraha">Home</a></li> <li> <details> <summary>Explore</summary> <ul class="bg-base-100 rounded-t-none p-2"> <li> <a href="sangraha/explore">Explore</a> </li><li> <a href="https://huggingface.co/datasets/ai4bharat/sangraha">Download</a> </li> </ul> </details> </li> </ul> </div> </div> <h2 class="flex justify-center text-lg md:text-2xl text-secondary font-semibold md:font-normal"> A Indic language pretraining data </h2> <div class="divider"> <span class="text-sm font-semibold">Description</span> </div> <p class="text my-4 font-normal"> Sangraha is the largest high-quality, cleaned Indic language pretraining data containing 251B tokens summed up over 22 languages, extracted from curated sources, existing multilingual corpora and large scale translations. </p> <ul class="menu menu-horizontal bg-base-200 rounded-box flex flex-row justify-center"> <li> <a class="link link-info" href="sangraha/explore">Explore Dataset</a> </li> <li> <a class="link link-info" href="https://huggingface.co/datasets/ai4bharat/sangraha">Download Dataset</a> </li> <li> <a class="link link-info" href="https://arxiv.org/abs/2403.06350">Read Paper</a> </li> </ul> <div class="divider" id="downloads"> <span class="text-sm font-semibold"> Download </span> </div> <article class="prose prose-headings:text-primary prose-a:text-secondary prose-li:marker:text-accent mx-auto">  </article> <div class="divider" id="details"> <span class="text-sm font-semibold"> Details </span> </div> <article class="prose prose-headings:text-primary prose-a:text-secondary prose-li:marker:text-accent max-w-none"> <h1 id="sangraha">Sangraha</h1>
+<p align="center">
+  <img src="https://cdn-uploads.huggingface.co/production/uploads/63ef3cd11e695b35aa48bebc/nDnyidcqIOLAP9dTw9GrK.png">
+</p>
+<p>Sangraha is the largest high-quality, cleaned Indic language pretraining data containing 251B tokens summed up over 22 languages, extracted from curated sources, existing multilingual corpora and large scale translations.</p>
+<p><strong>Coming Soon</strong>:</p>
+<ul>
+<li>Sangraha Synthetic - Translated and Romanised English Wikimedia data.</li>
+<li>Sangraha Verified - Hindi YouTube transcribed data.</li>
+</ul>
+<p><strong>More information</strong>:</p>
+<ul>
+<li>For detailed information on the curation and cleaning process of Sangraha, please checkout our paper <a href="https://arxiv.org/abs/2403.06350">on Arxiv</a>;</li>
+<li>Check out the scraping and cleaning pipelines used to curate Sangraha <a href="https://github.com/AI4Bharat/IndicLLMSuite">on GitHub</a>;</li>
+</ul>
+<h2 id="getting-started">Getting Started</h2>
+<p>For downloading the entire Sangraha:</p>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#FF79C6">from</span><span style="color:#F8F8F2"> datasets </span><span style="color:#FF79C6">import</span><span style="color:#F8F8F2"> load_dataset</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F8F8F2">dataset </span><span style="color:#FF79C6">=</span><span style="color:#F8F8F2"> load_dataset(</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">ai4bharat/sangraha</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">)</span></span>
+<span class="line"></span></code></pre>
+<p>For downloading a subset (Verified/Unverified) of Sangraha:</p>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#FF79C6">from</span><span style="color:#F8F8F2"> datasets </span><span style="color:#FF79C6">import</span><span style="color:#F8F8F2"> load_dataset</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F8F8F2">dataset </span><span style="color:#FF79C6">=</span><span style="color:#F8F8F2"> load_dataset(</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">ai4bharat/sangraha</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">, </span><span style="color:#FFB86C;font-style:italic">data_dir</span><span style="color:#FF79C6">=</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">&#x3C;subset_name></span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">)</span></span>
+<span class="line"><span style="color:#6272A4"># for example: dataset = load_dataset("ai4bharat/sangraha", data_dir="verified")</span></span>
+<span class="line"></span></code></pre>
+<p>For downloading one language from a subset of Sangraha:</p>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#FF79C6">from</span><span style="color:#F8F8F2"> datasets </span><span style="color:#FF79C6">import</span><span style="color:#F8F8F2"> load_dataset</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F8F8F2">dataset </span><span style="color:#FF79C6">=</span><span style="color:#F8F8F2"> load_dataset(</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">ai4bharat/sangraha</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">, </span><span style="color:#FFB86C;font-style:italic">data_dir</span><span style="color:#FF79C6">=</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">&#x3C;subset_name>/&#x3C;lang_code></span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">)</span></span>
+<span class="line"><span style="color:#6272A4"># for example: dataset = load_dataset("ai4bharat/sangraha", data_dir="verified/asm")</span></span>
+<span class="line"></span></code></pre>
+<h2 id="background">Background</h2>
+<p>Sangraha contains three broad components:</p>
+<ul>
+<li><strong>Sangraha Verified</strong>: Containing scraped data from “human-verified” Websites, OCR-extracted data from high quality Indic language PDFs, transcribed data from various Indic language videos, podcasts, movies, courses, etc.</li>
+<li><strong>Sangraha Unverfied</strong>: High quality Indic language data extracted from existing multilingual corpora employing perplexity filtering using n-gram language models trained on Sangraha Verified.</li>
+<li><strong>Sangraha Synthetic</strong>: WikiMedia English translated to 14 Indic languages and further “romanised” from 14 languages by transliteration to English.</li>
+</ul>
+<h2 id="data-statistics">Data Statistics</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Lang Code</strong></th><th><strong>Verified</strong></th><th><strong>Synthetic</strong></th><th><strong>Unverified</strong></th><th><strong>Total Tokens (in Millions)</strong></th></tr></thead><tbody><tr><td>asm</td><td>292.1</td><td>11,696.4</td><td>17.5</td><td>12,006.0</td></tr><tr><td>ben</td><td>10,604.4</td><td>13,814.1</td><td>5,608.8</td><td>30,027.5</td></tr><tr><td>brx</td><td>1.5</td><td>-</td><td>-</td><td>1.5</td></tr><tr><td>doi</td><td>0.06</td><td>-</td><td>-</td><td>0.06</td></tr><tr><td>eng</td><td>12,759.9</td><td>-</td><td>-</td><td>12,759.9</td></tr><tr><td>gom</td><td>10.1</td><td>-</td><td>-</td><td>10.1</td></tr><tr><td>guj</td><td>3,647.9</td><td>12,934.5</td><td>597.0</td><td>17,179.4</td></tr><tr><td>hin</td><td>12,617.3</td><td>9,578.7</td><td>12,348.3</td><td>34,544.3</td></tr><tr><td>kan</td><td>1,778.3</td><td>12,087.4</td><td>388.8</td><td>14,254.5</td></tr><tr><td>kas</td><td>0.5</td><td>-</td><td>-</td><td>0.5</td></tr><tr><td>mai</td><td>14.6</td><td>-</td><td>-</td><td>14.6</td></tr><tr><td>mal</td><td>2,730.8</td><td>13,130.0</td><td>547.8</td><td>16,408.6</td></tr><tr><td>mar</td><td>2,827.0</td><td>10,816.7</td><td>652.1</td><td>14,295.8</td></tr><tr><td>mni</td><td>7.4</td><td>-</td><td>-</td><td>7.4</td></tr><tr><td>npi</td><td>1,822.5</td><td>10,588.7</td><td>485.5</td><td>12,896.7</td></tr><tr><td>ori</td><td>1,177.1</td><td>11,338.0</td><td>23.7</td><td>12,538.8</td></tr><tr><td>pan</td><td>1,075.3</td><td>9,969.6</td><td>136.9</td><td>11,181.8</td></tr><tr><td>san</td><td>1,329.0</td><td>13,553.5</td><td>9.8</td><td>14,892.3</td></tr><tr><td>sat</td><td>0.3</td><td>-</td><td>-</td><td>0.3</td></tr><tr><td>snd</td><td>258.2</td><td>-</td><td>-</td><td>258.2</td></tr><tr><td>tam</td><td>3,985.1</td><td>11,859.3</td><td>1,515.9</td><td>17,360.3</td></tr><tr><td>urd</td><td>3,658.1</td><td>9,415.8</td><td>1,328.2</td><td>14,402.1</td></tr><tr><td>tel</td><td>3,706.8</td><td>11,924.5</td><td>647.4</td><td>16,278.7</td></tr><tr><td><strong>Total</strong></td><td><strong>64,306.1</strong></td><td><strong>162,707.9</strong></td><td><strong>24,307.7</strong></td><td><strong>251,321.0</strong></td></tr></tbody></table>
+<p>To cite Sangraha, please use:</p>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>@article{khan2024indicllmsuite,</span></span>
+<span class="line"><span>  title   = {IndicLLMSuite: A Blueprint for Creating Pre-training and Fine-Tuning Datasets for Indian Languages},</span></span>
+<span class="line"><span>  author  = {Mohammed Safi Ur Rahman Khan and Priyam Mehta and Ananth Sankar and Umashankar Kumaravelan and Sumanth Doddapaneni and Suriyaprasaad G and Varun Balan G and Sparsh Jain and Anoop Kunchukuttan and Pratyush Kumar and Raj Dabre and Mitesh M. Khapra},</span></span>
+<span class="line"><span>  year    = {2024},</span></span>
+<span class="line"><span>  journal = {arXiv preprint arXiv: 2403.06350}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre> </article>  </body></html>

@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import type { Dataset } from "../types";
+
+const url = import.meta.env.PUBLIC_API_URL;
+
+const response = await fetch(url + "/datasets");
+const datasets: Dataset[] = await response.json();
+---
+
+<Layout title="Research Lab Datasets">
+  <h1>Available Datasets</h1>
+  <ul>
+    {
+      datasets.map((dataset) => (
+        <li>
+          <a href={`/${dataset.name}`}>{dataset.name}</a>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>

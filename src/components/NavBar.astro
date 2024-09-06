@@ -1,0 +1,38 @@
+---
+interface Props {
+  title: string;
+  home_link: string;
+  links: { name: string; link: string }[];
+}
+
+const { title, home_link, links } = Astro.props;
+---
+
+<div class="navbar bg-base-100">
+  <div class="flex-1">
+    <a
+      href={home_link}
+      class="text-3xl font-bold bg-gradient-to-r from-orange-600 via-red-500 to-black inline-block text-transparent bg-clip-text"
+      >{title}</a
+    >
+  </div>
+  <div class="flex-none">
+    <ul class="menu menu-horizontal px-1">
+      <li><a href={home_link}>Home</a></li>
+      <li>
+        <details>
+          <summary>Explore</summary>
+          <ul class="bg-base-100 rounded-t-none p-2">
+            {
+              links.map((link) => (
+                <li>
+                  <a href={link.link}>{link.name}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </div>
+</div>

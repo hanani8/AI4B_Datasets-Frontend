@@ -1,0 +1,286 @@
+<!DOCTYPE html><html lang="en" data-theme="mytheme"> <head><meta charset="UTF-8"><meta name="description" content="AI4Bharat Datasets"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v4.14.5"><!-- Add this to your HTML file --><!-- <link
+s      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+    /> --><script type="module" src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script><title>svarah</title><link rel="stylesheet" href="/astro/explore.D-UsDqG8.css"></head> <body class="container mx-auto px-4 mb-4 md:mb-8">  <div class="navbar bg-base-100"> <div class="flex-1"> <a href="/svarah" class="text-3xl font-bold bg-gradient-to-r from-orange-600 via-red-500 to-black inline-block text-transparent bg-clip-text">svarah</a> </div> <div class="flex-none"> <ul class="menu menu-horizontal px-1"> <li><a href="/svarah">Home</a></li> <li> <details> <summary>Explore</summary> <ul class="bg-base-100 rounded-t-none p-2"> <li> <a href="/svarah/explore">Explore</a> </li><li> <a href="https://github.com/AI4Bharat/Svarah">Download</a> </li> </ul> </details> </li> </ul> </div> </div> <h2 class="flex justify-center text-lg md:text-2xl text-secondary font-semibold md:font-normal"> An Indic accented English speech dataset </h2> <div class="divider"> <span class="text-sm font-semibold">Description</span> </div> <p class="text my-4 font-normal"> India is the second largest English-speaking country in the world with a speaker base of roughly 130 million. Unfortunately, Indian speakers find a very poor representation in existing English ASR benchmarks such as LibriSpeech, Switchboard, Speech Accent Archive, etc. We address this gap by creating Svarah, a benchmark that contains 9.6 hours of transcribed English audio from 117 speakers across 65 districts across 19 states in India, resulting in a diverse range of accents. The collective set of native languages spoken by the speakers covers 19 of the 22 constitutionally recognized languages of India, belonging to 4 different language families. Svarah includes both read speech and spontaneous conversational data, covering a variety of domains such as history, culture, tourism, government, sports, etc. It also contains data corresponding to popular use cases such as ordering groceries, making digital payments, and using government services (e.g., checking pension claims, checking passport status, etc.). The resulting diversity in vocabulary as well as use cases allows a more robust evaluation of ASR systems for real-world applications. </p> <ul class="menu menu-horizontal bg-base-200 rounded-box flex flex-row justify-center"> <li> <a class="link link-info" href="/svarah/explore">Explore Dataset</a> </li> <li> <a class="link link-info" href="https://github.com/AI4Bharat/Svarah">Download Dataset</a> </li> <li> <a class="link link-info" href="https://github.com/AI4Bharat/Svarah?tab=readme-ov-file">Read Paper</a> </li> </ul> <div class="divider" id="downloads"> <span class="text-sm font-semibold"> Download </span> </div> <article class="prose prose-headings:text-primary prose-a:text-secondary prose-li:marker:text-accent mx-auto"> 
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Datasets</th><th>Benchmark</th></tr></thead><tbody><tr><td>Svarah</td><td><a href="https://indic-asr-public.objectstore.e2enetworks.net/svarah.tar">link</a></td></tr></tbody></table> </article> <div class="divider" id="details"> <span class="text-sm font-semibold"> Details </span> </div> <article class="prose prose-headings:text-primary prose-a:text-secondary prose-li:marker:text-accent max-w-none"> <h2 id="tutorial">Tutorial</h2>
+<ul>
+<li>Sample structure of manifest file</li>
+</ul>
+<p>Applicable to <code>svarah_manifest.json</code> &#x26; <code>saa_l1_manifest.json</code></p>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>{"audio_filepath": &#x3C;path to audio file 1>, "duration": &#x3C;seconds>, "text": &#x3C;transcript 1>}</span></span>
+<span class="line"><span>{"audio_filepath": &#x3C;path to audio file 2>, "duration": &#x3C;seconds>, "text": &#x3C;transcript 2>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span></code></pre>
+<ul>
+<li>Running evaluation scripts</li>
+</ul>
+<p>For azure and google cloud evaluations, you will be required to add your key associated with the services offered by each. For others, you can run the following :</p>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>python eval_&#x3C;hf_model>.py  --manifest &#x3C;manifest path></span></span>
+<span class="line"><span></span></span></code></pre>
+<p>For processing audio filepaths, kindly change them as per your directory structure in the scripts.</p>
+<ul>
+<li>Meta statistics of speakers</li>
+</ul>
+<p>The <code>meta_speaker_stats.csv</code> file consists of 11 columns which describes some meta statistics of speakers involved in <em>Svarah</em>:</p>
+<ul>
+<li><code>speaker_id</code> — unique speaker identifier</li>
+<li><code>duration</code> — duration of audio recorded (seconds)</li>
+<li><code>text</code> — transcript of audio</li>
+<li><code>gender</code> — “Male” / “Female”</li>
+<li><code>age-group</code> — speaker’s age group (18-30, 30-45, 45-60 &#x26; 60+ )</li>
+<li><code>primary_language</code> — speaker’s primary language</li>
+<li><code>native_place_state</code> — speaker’s native state</li>
+<li><code>native_place_district</code> — speaker’s native district</li>
+<li><code>highest_qualification</code> — speaker’s highest education qualification</li>
+<li><code>job_category</code> — speakers’s job category (Part Time, Full Time, Other)</li>
+<li><code>occupation_domain</code> — speaker’s domain of occupation (Education and Research, Healthcare [Medical &#x26; Pharma], Government, Technology and Services, Information and Media, Financial Services [Banking and Insurance], Transportation and Logistics, Entertainment, Social service, Manufacturing &#x26; Retail )</li>
+</ul>
+<ul>
+<li>
+<p>Svarah folder tree</p>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>  Svarah</span></span>
+<span class="line"><span>      ├── audio</span></span>
+<span class="line"><span>      │   ├── &#x3C;filename>.wav</span></span>
+<span class="line"><span>      │   └── &#x3C;filename>.txt</span></span>
+<span class="line"><span>      │    .</span></span>
+<span class="line"><span>      │    .</span></span>
+<span class="line"><span>      │    .</span></span>
+<span class="line"><span>      ├── svarah_manifest.json</span></span>
+<span class="line"><span>      ├── saa_l1_manifest.json</span></span>
+<span class="line"><span>      └── meta_speaker_stats.csv</span></span>
+<span class="line"><span></span></span></code></pre>
+</li>
+</ul>
+<hr>
+<h2 id="table-1-wer-comparison">Table 1: WER comparison</h2>
+<p>Table 1 depicts WER’s of different models on (i) <em>Svarah</em> that contains data from Indian speakers and (ii) SAA_L1, LibriSpeech Clean (Libri) which contain data from native English speakers.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th># Params.</th><th><em>Svarah</em></th><th>SAA_L1</th><th>LibriSpeech</th></tr></thead><tbody><tr><td>Whisper<sub>base</sub></td><td>74M</td><td>13.6</td><td>2.9</td><td>4.2</td></tr><tr><td>Whisper<sub>medium</sub></td><td>769M</td><td>8.3</td><td>1.7</td><td>3.1</td></tr><tr><td>Whisper<sub>large</sub></td><td>1550M</td><td>7.2</td><td>1.6</td><td>2.7</td></tr><tr><td>Wav2Vec2<sub>large</sub></td><td>317M</td><td>24.9</td><td>3.1</td><td>1.8</td></tr><tr><td>HuBERT<sub>large</sub></td><td>316M</td><td>25.6</td><td>3.2</td><td>2.0</td></tr><tr><td>WavLM<sub>large</sub></td><td>300M</td><td>33.7</td><td>9.2</td><td>3.4</td></tr><tr><td>Data2Vec<sub>large</sub></td><td>313M</td><td>24.5</td><td>2.5</td><td>1.8</td></tr><tr><td>Conformer<sub>large</sub></td><td>120M</td><td>14.6</td><td>1.1</td><td>2.1</td></tr><tr><td>Azure<sub>US</sub></td><td>-</td><td>20.9</td><td>24.2</td><td>-</td></tr><tr><td>Azure<sub>IN</sub></td><td>-</td><td>21.3</td><td>30.1</td><td>-</td></tr><tr><td>Google<sub>US</sub></td><td>-</td><td>30.0</td><td>16.8</td><td>-</td></tr><tr><td>Google<sub>IN</sub></td><td>-</td><td>20.7</td><td>63.7</td><td>-</td></tr></tbody></table>
+<hr>
+<h2 id="table-2-accent-wise-split-of-svarah">Table 2: Accent-wise split of <em>Svarah</em></h2>
+<p>Table 2: Number of hours and Number of tokens in each accent</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Accent</th><th># Hours</th><th># Tokens</th></tr></thead><tbody><tr><td>Assamese</td><td>0.26</td><td>869</td></tr><tr><td>Bengali</td><td>0.33</td><td>1024</td></tr><tr><td>Bodo</td><td>0.63</td><td>1520</td></tr><tr><td>Dogri</td><td>0.44</td><td>1262</td></tr><tr><td>Gujarati</td><td>0.37</td><td>1051</td></tr><tr><td>Hindi</td><td>0.40</td><td>1068</td></tr><tr><td>Kannada</td><td>0.71</td><td>1892</td></tr><tr><td>Kashmiri</td><td>0.40</td><td>1310</td></tr><tr><td>Konkani</td><td>0.54</td><td>1325</td></tr><tr><td>Maithili</td><td>0.76</td><td>1662</td></tr><tr><td>Malayalam</td><td>0.68</td><td>1711</td></tr><tr><td>Marathi</td><td>0.30</td><td>948</td></tr><tr><td>Nepali</td><td>1.16</td><td>2236</td></tr><tr><td>Odia</td><td>0.61</td><td>1548</td></tr><tr><td>Punjabi</td><td>0.27</td><td>820</td></tr><tr><td>Sindhi</td><td>0.18</td><td>536</td></tr><tr><td>Tamil</td><td>0.44</td><td>1352</td></tr><tr><td>Telugu</td><td>0.50</td><td>1311</td></tr><tr><td>Urdu</td><td>0.64</td><td>1814</td></tr></tbody></table>
+<hr>
+<h1 id="citation">Citation</h1>
+<p>If you benefit from this dataset, kindly cite as follows:</p>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>@misc{javed2023svarah,</span></span>
+<span class="line"><span>      title={Svarah: Evaluating English ASR Systems on Indian Accents},</span></span>
+<span class="line"><span>      author={Tahir Javed and Sakshi Joshi and Vignesh Nagarajan and Sai Sundaresan and Janki Nawale and Abhigyan Raman and Kaushal Bhogale and Pratyush Kumar and Mitesh M. Khapra},</span></span>
+<span class="line"><span>      year={2023},</span></span>
+<span class="line"><span>      eprint={2305.15760},</span></span>
+<span class="line"><span>      archivePrefix={arXiv},</span></span>
+<span class="line"><span>      primaryClass={cs.CL}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre> </article>  </body></html>

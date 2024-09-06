@@ -1,0 +1,156 @@
+---
+import type { Dataset } from "../types";
+
+interface Props {
+  dataset: Dataset;
+  url: string;
+}
+
+const dataset: Dataset = Astro.props.dataset;
+const url: string = Astro.props.url;
+
+import AudioWaveSurfer from './AudioWaveSurfer.vue';
+---
+
+
+
+<div id="filters" class="flex md:flex-row flex-col gap-4">
+  {dataset.filters.map((filter) => (
+    <div class="filter-group w-full">
+      <label class="text-xs mb-1">{filter}</label>
+      <select multiple class="multi-select w-full" data-filter={filter}>
+        <!-- Options will be populated dynamically -->
+      </select>
+    </div>
+  ))}
+</div>
+
+<div class="overflow-x-auto">
+  <table id="dataTable" class="table">
+    <thead>
+      <tr>
+        {dataset.columns.map((column) => <th>{column}</th>)}
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Table body will be populated dynamically -->
+    </tbody>
+  </table>
+</div>
+
+<button id="loadMore" class="btn btn-primary my-4 w-full">Load More</button>
+
+<!-- Container for the AudioWaveSurfer Vue component -->
+<AudioWaveSurfer v-if="dataset.is_audio == True" client:only="vue"></AudioWaveSurfer>
+
+<script is:inline define:vars={{ dataset, url }}>
+  let choicesInstances = [];
+  // let selectedRow = ''; // Variable to hold the selected audio file path
+
+  async function loadData(filters = {}) {
+    const queryParams = new URLSearchParams();
+    Object.entries(filters).forEach(([key, values]) => {
+      values.forEach(value => queryParams.append(key, value));
+    });
+    const response = await fetch(
+      `${url}/data/${dataset.name}?${queryParams}`
+    );
+    const data = await response.json();
+    return data;
+  }
+
+  function populateTable(data) {
+    const tbody = document.querySelector("#dataTable tbody");
+    tbody.innerHTML = ""; // Clear existing data
+    data.forEach((row) => {
+      const tr = document.createElement("tr");
+      tr.classList.add("hover");
+
+      // On Click, pass the audio_filepath to the Vue component
+      tr.addEventListener("click", () => {
+        
+        Array.from(document.getElementsByTagName('tr')).forEach((t) => {
+          t.classList.remove('border-2');
+          t.classList.remove('border-black');
+
+        });
+
+        tr.classList.add('border-2');
+        tr.classList.add('border-black');
+
+        selectedFilepath = row['audio_filepath'] // Update the selected row
+        const event = new CustomEvent('audio-selected', { detail: {
+          "text": row["text"],
+           "audio_filepath": row["audio_filepath"],
+           "dataset": dataset.name
+        } });
+        window.dispatchEvent(event); // Dispatch an event with the selected file path
+      });
+
+      dataset.columns.forEach((column) => {
+        const td = document.createElement("td");
+        td.textContent = row[column];
+        tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    });
+  }
+
+  async function loadFilters() {
+    const response = await fetch(
+      `${url}/filters/${dataset.name}`
+    );
+    const filters = await response.json();
+    Object.entries(filters).forEach(([filter, options]) => {
+      const selectElement = document.querySelector(`select[data-filter="${filter}"]`);
+      
+      options.forEach((option) => {
+        const optionElement = document.createElement("option");
+        optionElement.value = option;
+        optionElement.textContent = option;
+        selectElement.appendChild(optionElement);
+      });
+
+      const choices = new Choices(selectElement, {
+        removeItemButton: true,
+        placeholder: true,
+        placeholderValue: `Select ${filter}`,
+        searchEnabled: true,
+        
+      });
+      choicesInstances.push(choices);
+    });
+  }
+
+  function getSelectedFilters() {
+    const filters = {};
+    choicesInstances.forEach(choices => {
+      const filterName = choices.passedElement.element.dataset.filter;
+      const selectedOptions = choices.getValue(true);
+      if (selectedOptions.length > 0) {
+        filters[filterName] = selectedOptions;
+      }
+    });
+    return filters;
+  }
+
+  async function init() {
+    await loadFilters();
+    const initialData = await loadData();
+    populateTable(initialData.data);
+  }
+
+  document.addEventListener("DOMContentLoaded", init);
+
+  document.querySelector("#loadMore").addEventListener("click", async () => {
+    const filters = getSelectedFilters();
+    const data = await loadData(filters);
+    populateTable(data.data);
+  });
+
+  document.querySelector("#filters").addEventListener("change", async () => {
+    const filters = getSelectedFilters();
+    const data = await loadData(filters);
+    populateTable(data.data);
+  });
+</script>

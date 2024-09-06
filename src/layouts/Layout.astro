@@ -1,0 +1,35 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+import "../choices.min.css";
+---
+
+<!doctype html>
+<html lang="en" data-theme="mytheme">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="AI4Bharat Datasets" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <!-- Add this to your HTML file -->
+    <!-- <link
+s      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+    /> -->
+    <script
+      is:inline
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"
+    ></script>
+
+    <title>{title}</title>
+  </head>
+  <body class="container mx-auto px-4 mb-4 md:mb-8">
+    <slot />
+  </body>
+</html>
+<style is:global></style>

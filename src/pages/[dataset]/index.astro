@@ -1,0 +1,85 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import type { Dataset } from "../../types";
+import NavBar from "../../components/NavBar.astro";
+import { getEntry } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+export async function getStaticPaths() {
+  const url = import.meta.env.PUBLIC_API_URL;
+  const response = await fetch(url + "/datasets");
+  const datasets: Dataset[] = await response.json();
+  return datasets.map((dataset) => ({
+    params: { dataset: dataset.name },
+    props: { dataset },
+  }));
+}
+
+const { dataset } = Astro.props;
+const download: CollectionEntry<"downloads"> = (await getEntry(
+  "downloads",
+  dataset.name
+)) as CollectionEntry<"downloads">;
+
+const detail: CollectionEntry<"details"> = (await getEntry(
+  "details",
+  dataset.name
+)) as CollectionEntry<"details">;
+
+const downloadObject = await download.render();
+const DownloadContent = downloadObject.Content;
+const detailObject = await detail.render();
+const DetailContent = detailObject.Content;
+---
+
+<Layout title={dataset.name}>
+  <NavBar
+    title={dataset.name}
+    home_link=`/${dataset.name}`
+    links={[
+      { name: "Explore", link: dataset.explore_link },
+      { name: "Download", link: dataset.download_link },
+    ]}
+  />
+  <h2
+    class="flex justify-center text-lg md:text-2xl text-secondary font-semibold md:font-normal"
+  >
+    {dataset.subtitle}
+  </h2>
+  <div class="divider">
+    <span class="text-sm font-semibold">Description</span>
+  </div>
+  <p class="text my-4 font-normal">
+    {dataset.description}
+  </p>
+  <ul
+    class="menu menu-horizontal bg-base-200 rounded-box flex flex-row justify-center"
+  >
+    <li>
+      <a class="link link-info" href={dataset.explore_link}>Explore Dataset</a>
+    </li>
+    <li>
+      <a class="link link-info" href={dataset.download_link}>Download Dataset</a
+      >
+    </li>
+    <li>
+      <a class="link link-info" href={dataset.paper_link}>Read Paper</a>
+    </li>
+  </ul>
+  <div class="divider" id="downloads">
+    <span class="text-sm font-semibold"> Download </span>
+  </div>
+  <article
+    class="prose prose-headings:text-primary prose-a:text-secondary prose-li:marker:text-accent mx-auto"
+  >
+    <DownloadContent />
+  </article>
+  <div class="divider" id="details">
+    <span class="text-sm font-semibold"> Details </span>
+  </div>
+  <article
+    class="prose prose-headings:text-primary prose-a:text-secondary prose-li:marker:text-accent max-w-none"
+  >
+    <DetailContent />
+  </article>
+</Layout>

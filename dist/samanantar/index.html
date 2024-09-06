@@ -1,0 +1,209 @@
+<!DOCTYPE html><html lang="en" data-theme="mytheme"> <head><meta charset="UTF-8"><meta name="description" content="AI4Bharat Datasets"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v4.14.5"><!-- Add this to your HTML file --><!-- <link
+s      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+    /> --><script type="module" src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script><title>samanantar</title><link rel="stylesheet" href="/astro/explore.D-UsDqG8.css"></head> <body class="container mx-auto px-4 mb-4 md:mb-8">  <div class="navbar bg-base-100"> <div class="flex-1"> <a href="/samanantar" class="text-3xl font-bold bg-gradient-to-r from-orange-600 via-red-500 to-black inline-block text-transparent bg-clip-text">samanantar</a> </div> <div class="flex-none"> <ul class="menu menu-horizontal px-1"> <li><a href="/samanantar">Home</a></li> <li> <details> <summary>Explore</summary> <ul class="bg-base-100 rounded-t-none p-2"> <li> <a href="samanantar/explore">Explore</a> </li><li> <a href="https://huggingface.co/datasets/ai4bharat/samanantar">Download</a> </li> </ul> </details> </li> </ul> </div> </div> <h2 class="flex justify-center text-lg md:text-2xl text-secondary font-semibold md:font-normal"> A Indic language parallel corpora </h2> <div class="divider"> <span class="text-sm font-semibold">Description</span> </div> <p class="text my-4 font-normal"> We present Samanantar, the largest publicly available parallel corpora collection for Indic languages. The collection contains a total of 49.7 million sentence pairs between English and 11 Indic languages (from two language families). Specifically, we compile 12.4 million sentence pairs from existing, publicly-available parallel corpora, and additionally mine 37.4 million sentence pairs from the web, resulting in a 4x increase. We mine the parallel sentences from the web by combining many corpora, tools, and methods - (a) web-crawled monolingual corpora, (b) document OCR for extracting sentences from scanned documents, (c) multilingual representation models for aligning sentences, and (d) approximate nearest neighbor search for searching in a large collection of sentences. Human evaluation of samples from the newly mined corpora validate the high quality of the parallel sentences across 11 languages. Further, we extract 83.4 million sentence pairs between all 55 Indic language pairs from the English-centric parallel corpus using English as the pivot language. We trained multilingual NMT models spanning all these languages on Samanantar, which outperform existing models and baselines on publicly available benchmarks, such as FLORES, establishing the utility of Samanantar. </p> <ul class="menu menu-horizontal bg-base-200 rounded-box flex flex-row justify-center"> <li> <a class="link link-info" href="samanantar/explore">Explore Dataset</a> </li> <li> <a class="link link-info" href="https://huggingface.co/datasets/ai4bharat/samanantar">Download Dataset</a> </li> <li> <a class="link link-info" href="https://arxiv.org/abs/2104.05596">Read Paper</a> </li> </ul> <div class="divider" id="downloads"> <span class="text-sm font-semibold"> Download </span> </div> <article class="prose prose-headings:text-primary prose-a:text-secondary prose-li:marker:text-accent mx-auto">  </article> <div class="divider" id="details"> <span class="text-sm font-semibold"> Details </span> </div> <article class="prose prose-headings:text-primary prose-a:text-secondary prose-li:marker:text-accent max-w-none"> <h1 id="dataset-card-for-samanantar">Dataset Card for Samanantar</h1>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#dataset-description">Dataset Description</a>
+<ul>
+<li><a href="#dataset-summary">Dataset Summary</a></li>
+<li><a href="#supported-tasks-and-leaderboards">Supported Tasks and Leaderboards</a></li>
+<li><a href="#languages">Languages</a></li>
+</ul>
+</li>
+<li><a href="#dataset-structure">Dataset Structure</a>
+<ul>
+<li><a href="#data-instances">Data Instances</a></li>
+<li><a href="#data-fields">Data Fields</a></li>
+<li><a href="#data-splits">Data Splits</a></li>
+</ul>
+</li>
+<li><a href="#dataset-creation">Dataset Creation</a>
+<ul>
+<li><a href="#curation-rationale">Curation Rationale</a></li>
+<li><a href="#source-data">Source Data</a></li>
+<li><a href="#annotations">Annotations</a></li>
+<li><a href="#personal-and-sensitive-information">Personal and Sensitive Information</a></li>
+</ul>
+</li>
+<li><a href="#considerations-for-using-the-data">Considerations for Using the Data</a>
+<ul>
+<li><a href="#social-impact-of-dataset">Social Impact of Dataset</a></li>
+<li><a href="#discussion-of-biases">Discussion of Biases</a></li>
+<li><a href="#other-known-limitations">Other Known Limitations</a></li>
+</ul>
+</li>
+<li><a href="#additional-information">Additional Information</a>
+<ul>
+<li><a href="#dataset-curators">Dataset Curators</a></li>
+<li><a href="#licensing-information">Licensing Information</a></li>
+<li><a href="#citation-information">Citation Information</a></li>
+<li><a href="#contributions">Contributions</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="dataset-description">Dataset Description</h2>
+<ul>
+<li><strong>Homepage:</strong> <a href="https://indicnlp.ai4bharat.org/samanantar/">https://indicnlp.ai4bharat.org/samanantar/</a></li>
+<li><strong>Repository:</strong></li>
+<li><strong>Paper:</strong> <a href="https://arxiv.org/abs/2104.05596">Samanantar: The Largest Publicly Available Parallel Corpora Collection for 11 Indic Languages</a></li>
+<li><strong>Leaderboard:</strong></li>
+<li><strong>Point of Contact:</strong></li>
+</ul>
+<h3 id="dataset-summary">Dataset Summary</h3>
+<p>Samanantar is the largest publicly available parallel corpora collection for Indic language: Assamese, Bengali,
+Gujarati, Hindi, Kannada, Malayalam, Marathi, Oriya, Punjabi, Tamil, Telugu.</p>
+<p>The corpus has 49.6M sentence pairs between English to Indian Languages.</p>
+<h3 id="supported-tasks-and-leaderboards">Supported Tasks and Leaderboards</h3>
+<p>[More Information Needed]</p>
+<h3 id="languages">Languages</h3>
+<p>Samanantar contains parallel sentences between English (<code>en</code>) and 11 Indic language:</p>
+<ul>
+<li>Assamese (<code>as</code>),</li>
+<li>Bengali (<code>bn</code>),</li>
+<li>Gujarati (<code>gu</code>),</li>
+<li>Hindi (<code>hi</code>),</li>
+<li>Kannada (<code>kn</code>),</li>
+<li>Malayalam (<code>ml</code>),</li>
+<li>Marathi (<code>mr</code>),</li>
+<li>Odia (<code>or</code>),</li>
+<li>Punjabi (<code>pa</code>),</li>
+<li>Tamil (<code>ta</code>) and</li>
+<li>Telugu (<code>te</code>).</li>
+</ul>
+<h2 id="dataset-structure">Dataset Structure</h2>
+<h3 id="data-instances">Data Instances</h3>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>{</span></span>
+<span class="line"><span>  'idx': 0,</span></span>
+<span class="line"><span>  'src': 'Prime Minister Narendra Modi met Her Majesty Queen Maxima of the Kingdom of the Netherlands today.',</span></span>
+<span class="line"><span>  'tgt': 'নতুন দিল্লিতে সোমবার প্রধানমন্ত্রী শ্রী নরেন্দ্র মোদীর সঙ্গে নেদারন্যান্ডসের মহারানী ম্যাক্সিমা সাক্ষাৎ করেন।',</span></span>
+<span class="line"><span>  'data_source': 'pmi'</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre>
+<h3 id="data-fields">Data Fields</h3>
+<ul>
+<li>
+<p><code>idx</code> (int): ID.</p>
+</li>
+<li>
+<p><code>src</code> (string): Sentence in source language (English).</p>
+</li>
+<li>
+<p><code>tgt</code> (string): Sentence in destination language (one of the 11 Indic languages).</p>
+</li>
+<li>
+<p><code>data_source</code> (string): Source of the data.
+For created data sources, depending on the destination language, it might be one of:</p>
+<ul>
+<li>anuvaad_catchnews</li>
+<li>anuvaad_DD_National</li>
+<li>anuvaad_DD_sports</li>
+<li>anuvaad_drivespark</li>
+<li>anuvaad_dw</li>
+<li>anuvaad_financialexpress</li>
+<li>anuvaad-general_corpus</li>
+<li>anuvaad_goodreturns</li>
+<li>anuvaad_indianexpress</li>
+<li>anuvaad_mykhel</li>
+<li>anuvaad_nativeplanet</li>
+<li>anuvaad_newsonair</li>
+<li>anuvaad_nouns_dictionary</li>
+<li>anuvaad_ocr</li>
+<li>anuvaad_oneindia</li>
+<li>anuvaad_pib</li>
+<li>anuvaad_pib_archives</li>
+<li>anuvaad_prothomalo</li>
+<li>anuvaad_timesofindia</li>
+<li>asianetnews</li>
+<li>betterindia</li>
+<li>bridge</li>
+<li>business_standard</li>
+<li>catchnews</li>
+<li>coursera</li>
+<li>dd_national</li>
+<li>dd_sports</li>
+<li>dwnews</li>
+<li>drivespark</li>
+<li>fin_express</li>
+<li>goodreturns</li>
+<li>gu_govt</li>
+<li>jagran-business</li>
+<li>jagran-education</li>
+<li>jagran-sports</li>
+<li>ie_business</li>
+<li>ie_education</li>
+<li>ie_entertainment</li>
+<li>ie_general</li>
+<li>ie_lifestyle</li>
+<li>ie_news</li>
+<li>ie_sports</li>
+<li>ie_tech</li>
+<li>indiccorp</li>
+<li>jagran-entertainment</li>
+<li>jagran-lifestyle</li>
+<li>jagran-news</li>
+<li>jagran-tech</li>
+<li>khan_academy</li>
+<li>Kurzgesagt</li>
+<li>marketfeed</li>
+<li>mykhel</li>
+<li>nativeplanet</li>
+<li>nptel</li>
+<li>ocr</li>
+<li>oneindia</li>
+<li>pa_govt</li>
+<li>pmi</li>
+<li>pranabmukherjee</li>
+<li>sakshi</li>
+<li>sentinel</li>
+<li>thewire</li>
+<li>toi</li>
+<li>tribune</li>
+<li>vsauce</li>
+<li>wikipedia</li>
+<li>zeebiz</li>
+</ul>
+</li>
+</ul>
+<h3 id="data-splits">Data Splits</h3>
+<p>[More Information Needed]</p>
+<h2 id="dataset-creation">Dataset Creation</h2>
+<h3 id="curation-rationale">Curation Rationale</h3>
+<p>[More Information Needed]</p>
+<h3 id="source-data">Source Data</h3>
+<h4 id="initial-data-collection-and-normalization">Initial Data Collection and Normalization</h4>
+<p>[More Information Needed]</p>
+<h4 id="who-are-the-source-language-producers">Who are the source language producers?</h4>
+<p>[More Information Needed]</p>
+<h3 id="annotations">Annotations</h3>
+<h4 id="annotation-process">Annotation process</h4>
+<p>[More Information Needed]</p>
+<h4 id="who-are-the-annotators">Who are the annotators?</h4>
+<p>[More Information Needed]</p>
+<h3 id="personal-and-sensitive-information">Personal and Sensitive Information</h3>
+<p>[More Information Needed]</p>
+<h2 id="considerations-for-using-the-data">Considerations for Using the Data</h2>
+<h3 id="social-impact-of-dataset">Social Impact of Dataset</h3>
+<p>[More Information Needed]</p>
+<h3 id="discussion-of-biases">Discussion of Biases</h3>
+<p>[More Information Needed]</p>
+<h3 id="other-known-limitations">Other Known Limitations</h3>
+<p>[More Information Needed]</p>
+<h2 id="additional-information">Additional Information</h2>
+<h3 id="dataset-curators">Dataset Curators</h3>
+<p>[More Information Needed]</p>
+<h3 id="licensing-information">Licensing Information</h3>
+<p><a href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International</a>.</p>
+<h3 id="citation-information">Citation Information</h3>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>@misc{ramesh2021samanantar,</span></span>
+<span class="line"><span>      title={Samanantar: The Largest Publicly Available Parallel Corpora Collection for 11 Indic Languages},</span></span>
+<span class="line"><span>      author={Gowtham Ramesh and Sumanth Doddapaneni and Aravinth Bheemaraj and Mayank Jobanputra and Raghavan AK and Ajitesh Sharma and Sujit Sahoo and Harshita Diddee and Mahalakshmi J and Divyanshu Kakwani and Navneet Kumar and Aswin Pradeep and Srihari Nagaraj and Kumar Deepak and Vivek Raghavan and Anoop Kunchukuttan and Pratyush Kumar and Mitesh Shantadevi Khapra},</span></span>
+<span class="line"><span>      year={2021},</span></span>
+<span class="line"><span>      eprint={2104.05596},</span></span>
+<span class="line"><span>      archivePrefix={arXiv},</span></span>
+<span class="line"><span>      primaryClass={cs.CL}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre>
+<h3 id="contributions">Contributions</h3>
+<p>Thanks to <a href="https://github.com/albertvillanova">@albertvillanova</a> for adding this dataset.</p> </article>  </body></html>
