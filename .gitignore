@@ -1,0 +1,6 @@
+.astro
+.cache
+.env
+node_modules
+.vscode
+.env.production
