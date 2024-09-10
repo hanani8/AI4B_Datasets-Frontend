@@ -41,7 +41,9 @@ import AudioWaveSurfer from './AudioWaveSurfer.vue';
 <button id="loadMore" class="btn btn-primary my-4 w-full">Load More</button>
 
 <!-- Container for the AudioWaveSurfer Vue component -->
-<AudioWaveSurfer v-if="dataset.is_audio == True" client:only="vue"></AudioWaveSurfer>
+{dataset.is_audio && (
+  <AudioWaveSurfer client:only="vue"></AudioWaveSurfer>
+)}
 
 <script is:inline define:vars={{ dataset, url }}>
   let choicesInstances = [];

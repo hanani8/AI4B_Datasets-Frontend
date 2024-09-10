@@ -6,8 +6,8 @@ interface Dataset {
     columns: string[],
     subtitle: string,
     download_link: string,
-    explore_link: string
-
+    explore_link: string,
+    is_audio: boolean
 }
 
 export type { Dataset };

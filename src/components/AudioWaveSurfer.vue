@@ -70,7 +70,7 @@ watch(audioFilepath, (newUrl) => {
 <template>
     <div>
         <div id="audio-player"></div>
-        <div id="text" class="flex flex-row mx-auto mt-2">
+        <div id=" text" class="flex flex-row mx-auto mt-2">
             <span class="text-xl font-normal">
                 <strong>Transcript:</strong> {{ text }}
             </span>
