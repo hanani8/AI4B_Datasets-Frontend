@@ -22,6 +22,7 @@ const url = "https://datasets.backend.ai4bharat.org/api";
   function populateTable(data) {
     const tbody = document.querySelector("#dataTable tbody");
     tbody.innerHTML = ""; // Clear existing data
+    console.log(data);
     data.forEach((row) => {
       const tr = document.createElement("tr");
       tr.classList.add("hover");

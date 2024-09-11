@@ -26,6 +26,8 @@ const detail: CollectionEntry<"details"> = (await getEntry(
   dataset.name
 )) as CollectionEntry<"details">;
 
+console.log(detail);
+
 const downloadObject = await download.render();
 const DownloadContent = downloadObject.Content;
 const detailObject = await detail.render();
