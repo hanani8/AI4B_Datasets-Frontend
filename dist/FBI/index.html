@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="en" data-theme="mytheme"> <head><meta charset="UTF-8"><meta name="description" content="AI4Bharat Datasets"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v4.14.5"><!-- Add this to your HTML file --><!-- <link
+s      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+    /> --><script type="module" src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script><title>FBI</title><link rel="stylesheet" href="/astro/explore.D-UsDqG8.css"></head> <body class="container mx-auto px-4 mb-4 md:mb-8">  <div class="navbar bg-base-100"> <div class="flex-1"> <a href="/FBI" class="text-3xl font-bold bg-gradient-to-r from-orange-600 via-red-500 to-black inline-block text-transparent bg-clip-text">FBI</a> </div> <div class="flex-none"> <ul class="menu menu-horizontal px-1"> <li><a href="/FBI">Home</a></li> <li> <details> <summary>Explore</summary> <ul class="bg-base-100 rounded-t-none p-2"> <li> <a href="/FBI/explore">Explore</a> </li><li> <a href="https://github.com/AI4Bharat/FBI">Download</a> </li> </ul> </details> </li> </ul> </div> </div> <h2 class="flex justify-center text-lg md:text-2xl text-secondary font-semibold md:font-normal"> Finding Blindspots in LLM Evaluations with Interpretable Checklists </h2> <div class="divider"> <span class="text-sm font-semibold">Description</span> </div> <p class="text my-4 font-normal"> We present FBI, our novel meta-evaluation framework designed to assess the robustness of evaluator LLMs across diverse tasks and evaluation strategies. </p> <ul class="menu menu-horizontal bg-base-200 rounded-box flex flex-row justify-center"> <li> <a class="link link-info" href="/FBI/explore">Explore Dataset</a> </li> <li> <a class="link link-info" href="https://arxiv.org/abs/2406.13439">Read Paper</a> </li> </ul> <div class="divider" id="downloads"> <span class="text-sm font-semibold"> Download </span> </div> <article class="prose prose-headings:text-primary prose-a:text-secondary prose-li:marker:text-accent mx-auto"> 
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Resource name</th><th>link</th></tr></thead><tbody><tr><td>Dataset</td><td><a href="https://huggingface.co/datasets/ai4bharat/fbi">FBI</a></td></tr></tbody></table> </article> <div class="divider" id="details"> <span class="text-sm font-semibold"> Details </span> </div> <article class="prose prose-headings:text-primary prose-a:text-secondary prose-li:marker:text-accent max-w-none"> <h2 id="tasks">Tasks</h2>
+<p>We manually categorized each prompt into one of the 4 task categories:</p>
+<ul>
+<li><strong>Long Form Writing (LF)</strong>: These prompts require generating long pieces of text and explore generic topics, often including detailed analysis and storytelling. For example, <em>How can I improve my time management skills?</em></li>
+<li><strong>Factual (F)</strong>: These prompts seek objective information or facts. For example, <em>What is the primary function of a capacitor in an electrical circuit?</em></li>
+<li><strong>Instruction Following (IF)</strong>: These prompts require executing specific steps or guidelines to achieve a particular outcome or answer. For example, <em>Write a poem with <strong>four</strong> lines and the following words: peace, sky, race, ground.</em></li>
+<li><strong>Reasoning (R)</strong>: These prompts necessitate the application of logic, mathematics, and critical thinking to analyze information and draw conclusions. For example, <em>A bat and a ball together cost $1.10. The bat costs $1.00 more than the ball. How much does the ball cost?</em></li>
+</ul>
+<h2 id="how-to-use-from-the-datasets-library">How to use from the Datasets library</h2>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>from datasets import load_dataset</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ds = load_dataset("ai4bharat/FBI", "factual")</span></span>
+<span class="line"><span></span></span></code></pre>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>from datasets import load_dataset</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ds = load_dataset("ai4bharat/FBI", "instruction-following")</span></span>
+<span class="line"><span></span></span></code></pre>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>from datasets import load_dataset</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ds = load_dataset("ai4bharat/FBI", "long-form")</span></span>
+<span class="line"><span></span></span></code></pre>
+<h2 id="citation">Citation</h2>
+<p>If you used this repository or our models, please cite our work:</p>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bibtex"><code><span class="line"><span style="color:#FF79C6">@article</span><span style="color:#F8F8F2">{</span><span style="color:#8BE9FD;font-style:italic">doddapaneni2024finding</span><span style="color:#F8F8F2">,</span></span>
+<span class="line"><span style="color:#8BE9FD">  title</span><span style="color:#FF79C6">   =</span><span style="color:#E9F284"> {</span><span style="color:#F8F8F2">Finding Blind Spots in Evaluator LLMs with Interpretable Checklists</span><span style="color:#E9F284">}</span><span style="color:#F8F8F2">,</span></span>
+<span class="line"><span style="color:#8BE9FD">  author</span><span style="color:#FF79C6">  =</span><span style="color:#E9F284"> {</span><span style="color:#F8F8F2">Sumanth Doddapaneni and Mohammed Safi Ur Rahman Khan and Sshubam Verma and Mitesh M. Khapra</span><span style="color:#E9F284">}</span><span style="color:#F8F8F2">,</span></span>
+<span class="line"><span style="color:#8BE9FD">  year</span><span style="color:#FF79C6">    =</span><span style="color:#E9F284"> {</span><span style="color:#F8F8F2">2024</span><span style="color:#E9F284">}</span><span style="color:#F8F8F2">,</span></span>
+<span class="line"><span style="color:#8BE9FD">  journal</span><span style="color:#FF79C6"> =</span><span style="color:#E9F284"> {</span><span style="color:#F8F8F2">arXiv preprint arXiv: 2406.13439</span><span style="color:#E9F284">}</span></span>
+<span class="line"><span style="color:#F8F8F2">}</span></span>
+<span class="line"></span></code></pre>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>@misc{</span></span>
+<span class="line"><span>    to be updated</span></span>
+<span class="line"><span>} --></span></span>
+<span class="line"><span></span></span></code></pre> </article>  </body></html>
