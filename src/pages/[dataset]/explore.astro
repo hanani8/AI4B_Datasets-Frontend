@@ -17,6 +17,7 @@ export async function getStaticPaths() {
 const { dataset } = Astro.props;
 ---
 
+{dataset.explore_link && 
 <Layout title={`Explore ${dataset.name}`}>
   <NavBar
     title={dataset.name}
@@ -26,3 +27,4 @@ const { dataset } = Astro.props;
   <div class="divider"><span class="font-bold">Data</span></div>
   <DatasetTable dataset={dataset} url={import.meta.env.PUBLIC_API_URL} />
 </Layout>
+}

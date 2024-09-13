@@ -54,15 +54,27 @@ const DetailContent = detailObject.Content;
   <ul
     class="menu menu-horizontal bg-base-200 rounded-box flex flex-row justify-center"
   >
-    <li>
-      <a class="link link-info" href={dataset.explore_link}>Explore Dataset</a>
-    </li>
-    <li>
-      <a class="link link-info" href={dataset.paper_link}>Read Paper</a>
-    </li>
+    {
+      dataset.explore_link && (
+        <li>
+          <a class="link link-info" href={dataset.explore_link}>
+            Explore Dataset
+          </a>
+        </li>
+      )
+    }
+    {
+      dataset.paper_link && (
+        <li>
+          <a class="link link-info" href={dataset.paper_link}>
+            Read Paper
+          </a>
+        </li>
+      )
+    }
   </ul>
   <div class="divider" id="downloads">
-    <span class="text-sm font-semibold"> Download </span>
+    <span class="text-sm font-semibold"> Downloads </span>
   </div>
   <article
     class="prose prose-headings:text-primary prose-a:text-secondary prose-li:marker:text-accent mx-auto"

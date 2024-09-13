@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="en" data-theme="mytheme"> <head><meta charset="UTF-8"><meta name="description" content="AI4Bharat Datasets"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v4.14.5"><!-- Add this to your HTML file --><!-- <link
+s      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+    /> --><script type="module" src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script><title>dhwani</title><link rel="stylesheet" href="/astro/explore.D-UsDqG8.css"></head> <body class="container mx-auto px-4 mb-4 md:mb-8">  <div class="navbar bg-base-100"> <div class="flex-1"> <a href="/dhwani" class="text-3xl font-bold bg-gradient-to-r from-orange-600 via-red-500 to-black inline-block text-transparent bg-clip-text">dhwani</a> </div> <div class="flex-none"> <ul class="menu menu-horizontal px-1"> <li><a href="/dhwani">Home</a></li> <li> <details> <summary>Explore</summary> <ul class="bg-base-100 rounded-t-none p-2"> <li> <a href="/dhwani/explore">Explore</a> </li> </ul> </details> </li> </ul> </div> </div> <h2 class="flex justify-center text-lg md:text-2xl text-secondary font-semibold md:font-normal"> Youtube Data  for IndicWav2Vec </h2> <div class="divider"> <span class="text-sm font-semibold">Description</span> </div> <p class="text my-4 font-normal"> For downloading, chunking, SNR filtering publicly available audio data for Building ASR systems for the next billion users </p> <ul class="menu menu-horizontal bg-base-200 rounded-box flex flex-row justify-center"> <li> <a class="link link-info" href="/dhwani/explore">
+Explore Dataset
+</a> </li> <li> <a class="link link-info" href="https://arxiv.org/abs/2111.03945">
+Read Paper
+</a> </li> </ul> <div class="divider" id="downloads"> <span class="text-sm font-semibold"> Downloads </span> </div> <article class="prose prose-headings:text-primary prose-a:text-secondary prose-li:marker:text-accent mx-auto"> 
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Resource name</th><th>link</th></tr></thead><tbody><tr><td>Dataset</td><td><a href="https://github.com/AI4Bharat/IndicWav2Vec/blob/main/data_prep_scripts/pret_scripts/readme.md">Dhwani - Scripts</a></td></tr></tbody></table> </article> <div class="divider" id="details"> <span class="text-sm font-semibold"> Details </span> </div> <article class="prose prose-headings:text-primary prose-a:text-secondary prose-li:marker:text-accent max-w-none"> <h1 id="pretraining-data-processing">Pretraining Data Processing</h1>
+<h3 id="for-downloading-and-processing-yt-data">For Downloading and Processing YT Data</h3>
+<blockquote>
+<p>Required libraries <code>youtube_dl, yt_dlp, pandas, ffmpeg, tqdm</code></p>
+</blockquote>
+<blockquote>
+<p>Usage: <code>bash process_data.sh &#x3C;/path/to/download> &#x3C;num_of_threads></code></p>
+</blockquote>
+<ul>
+<li>The &#x3C;/path/to/download> refers to the location where the data will be downloaded.</li>
+<li>The &#x3C;num_of_threads> can be used to control the parallelization.</li>
+</ul>
+<p>The above command will start download of all the youtube-url’s for the language given, extract the audio (wav) and downsample it (to 16kHz) and name it as per the unique youtube-id. Subsequent to it, the data will be passed to VAD -> SNR -> Chunking pipeline automatically.</p>
+<h3 id="for-downloading-and-processing-noa-data">For Downloading and Processing NoA Data</h3>
+<blockquote>
+<p>Required libraries <code>ffmpeg, tqdm</code></p>
+</blockquote>
+<ol>
+<li>Download the NoA from the publicly availiable links</li>
+<li>Put the data in language specific folders</li>
+<li>Run <code>bash normalize_sr.sh &#x3C;path/to/root/of/NoA></code> to normalize the SR and number of channels</li>
+<li>Run <code>python vad.py &#x3C;path/to/root/of/NoA> &#x3C;path/to/refined/data/storage> language-specific-foldername </code></li>
+<li>Run <code>python snr_filter.py &#x3C;path/to/refined/data/storage> language-specific-foldername &#x3C;path/to/store/rejected/files></code></li>
+<li>Run <code>python chunking.py &#x3C;path/to/refined/data/storage/languagespecificfolder></code></li>
+</ol>
+<ul>
+<li>The &#x3C;path/to/root/of/NoA> root path to NoA directory.</li>
+</ul>
+<h3 id="for-processing-individual-directories">For Processing Individual Directories</h3>
+<ol>
+<li>Download the data using
+<blockquote>
+<p><code>bash dw_util.sh &#x3C;path/to/txt/of/a/particular/language> &#x3C;path/to/root/where/data/will/be/stored> &#x3C;#ofthreads></code></p>
+</blockquote>
+</li>
+<li>Pass the data through VAD step as given below</li>
+<li>Pass the data through SNR setp as given below</li>
+<li>Pass the data through Chunking as given below</li>
+</ol>
+<h4 id="additional-tools">Additional Tools</h4>
+<h3 id="for-voiced-activity-detection-step-only">For Voiced Activity Detection Step only</h3>
+<blockquote>
+<p>Required libraries <code>webrtcvad, tqdm</code></p>
+</blockquote>
+<blockquote>
+<p>Usage: <code>python vad.py &#x3C;data_read_dir> &#x3C;data_write_dir> &#x3C;folder_name></code></p>
+</blockquote>
+<ul>
+<li>The &#x3C;data_read_dir> is the root of downloaded files which contain downloaded data in language-named-folders</li>
+<li>The &#x3C;data_write_dir> is the location for saving the data after VAD step</li>
+<li>The &#x3C;folder_name> refers to the names of language-named-folder for which you want to perform this VAD step.</li>
+</ul>
+<p>The reason why folder_name has been kept as a seperate entity is to allow parallelization because one can process multiple folders simultaneously.</p>
+<h3 id="for-snr-filtering">For SNR Filtering</h3>
+<blockquote>
+<p>Required libraries <code>numpy, soundfile</code></p>
+</blockquote>
+<blockquote>
+<p>Usage: <code>python snr.py &#x3C;data_path> &#x3C;folder/language_name></code></p>
+</blockquote>
+<ul>
+<li>The &#x3C;data_path> refers to the root path containing all the audios in language specific folders. Here it refers to the &#x3C;data_write_dir> from the previous step.</li>
+<li>The &#x3C;folder/language_name> refers to name of language_specific folder for which snr_filtering needs to be applied. The audio data that is rejected is moved in the folder “snr_rejected”, which is created automatically.</li>
+</ul>
+<h3 id="for-chunking">For Chunking</h3>
+<blockquote>
+<p>Required libraries <code>pydub, joblib, tqdm</code></p>
+</blockquote>
+<blockquote>
+<p>Usage: <code>python chunking.py &#x3C;chunking_path></code></p>
+</blockquote>
+<ul>
+<li>All the audio files present in the &#x3C;chunking_path> will be chunked and saved in the same location. The original files are removed.</li>
+</ul> </article>  </body></html>
