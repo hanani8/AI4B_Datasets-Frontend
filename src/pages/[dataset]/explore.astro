@@ -21,10 +21,7 @@ const { dataset } = Astro.props;
   <NavBar
     title={dataset.name}
     home_link=`/${dataset.name}`
-    links={[
-      { name: "Explore", link: `/${dataset.name}/explore` },
-      { name: "Download", link: `/${dataset.name}/download ` },
-    ]}
+    links={[{ name: "Explore", link: `/${dataset.name}/explore` }]}
   />
   <div class="divider"><span class="font-bold">Data</span></div>
   <DatasetTable dataset={dataset} url={import.meta.env.PUBLIC_API_URL} />

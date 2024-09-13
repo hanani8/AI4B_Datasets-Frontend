@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="en" data-theme="mytheme"> <head><meta charset="UTF-8"><meta name="description" content="AI4Bharat Datasets"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v4.14.5"><!-- Add this to your HTML file --><!-- <link
+s      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+    /> --><script type="module" src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script><title>Explore IndicOOV</title><link rel="stylesheet" href="/astro/explore.D-UsDqG8.css"></head> <body class="container mx-auto px-4 mb-4 md:mb-8">  <div class="navbar bg-base-100"> <div class="flex-1"> <a href="/IndicOOV" class="text-3xl font-bold bg-gradient-to-r from-orange-600 via-red-500 to-black inline-block text-transparent bg-clip-text">IndicOOV</a> </div> <div class="flex-none"> <ul class="menu menu-horizontal px-1"> <li><a href="/IndicOOV">Home</a></li> <li> <details> <summary>Explore</summary> <ul class="bg-base-100 rounded-t-none p-2"> <li> <a href="/IndicOOV/explore">Explore</a> </li> </ul> </details> </li> </ul> </div> </div> <div class="divider"><span class="font-bold">Data</span></div> <div id="filters" class="flex md:flex-row flex-col gap-4"> <div class="filter-group w-full"> <label class="text-xs mb-1">language</label> <select multiple class="multi-select w-full" data-filter="language"> <!-- Options will be populated dynamically --> </select> </div><div class="filter-group w-full"> <label class="text-xs mb-1">speaker</label> <select multiple class="multi-select w-full" data-filter="speaker"> <!-- Options will be populated dynamically --> </select> </div> </div> <div class="overflow-x-auto"> <table id="dataTable" class="table"> <thead> <tr> <th>duration</th><th>speaker</th><th>language</th><th>text</th> </tr> </thead> <tbody> <!-- Table body will be populated dynamically --> </tbody> </table> </div> <button id="loadMore" class="btn btn-primary my-4 w-full">Load More</button> <!-- Container for the AudioWaveSurfer Vue component --> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).only=e;window.dispatchEvent(new Event("astro:only"));})();;(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t)},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="1bDaXX" component-url="/astro/AudioWaveSurfer.CXLqulIz.js" component-export="default" renderer-url="/astro/client.Dj7655uK.js" props="{}" ssr="" client="only" opts="{&quot;name&quot;:&quot;AudioWaveSurfer&quot;,&quot;value&quot;:&quot;vue&quot;}"></astro-island> <script>(function(){const dataset = {"audio_directory":"data/audio/ivr","columns":["duration","speaker","language","text"],"description":"Publicly available TTS datasets for low-resource languages like Hindi and Tamil typically contain 10-20 hours of data, leading to poor vocabulary coverage. This limitation becomes evident in downstream applications where domain-specific vocab- ulary coupled with frequent code-mixing with English, results in many OOV words. To highlight this problem, we create a benchmark containing OOV words from several real-world applications. Indeed, state-of-the-art Hindi and Tamil TTS systems perform poorly on this OOV benchmark, as indicated by intelligibility tests. To improve the model’s OOV performance, we propose a low-effort and economically viable strategy to obtain more training data. Specifically, we propose using volunteers as opposed to high quality voice artists to record words containing character bigrams unseen in the training data. We show that using such inexpensive data, the model’s performance improves on OOV words, while not affecting voice quality and in-domain performance.","download_link":"https://github.com/AI4Bharat/IndicVoices-R","explore_link":"/IndicOOV/explore","filters":["language","speaker"],"is_audio":true,"name":"IndicOOV","paper_link":"https://arxiv.org/pdf/2407.13435","path_to_csv":"data/csv/ivr.csv","subtitle":"Enhancing Out-of-Vocabulary Performance of Indian TTS Systems for Practical Applications through Low-Effort Data Strategies"};
+const url = "https://datasets.backend.ai4bharat.org/api";
+
+  let choicesInstances = [];
+  // let selectedRow = ''; // Variable to hold the selected audio file path
+
+  async function loadData(filters = {}) {
+    const queryParams = new URLSearchParams();
+    Object.entries(filters).forEach(([key, values]) => {
+      values.forEach(value => queryParams.append(key, value));
+    });
+    const response = await fetch(
+      `${url}/data/${dataset.name}?${queryParams}`
+    );
+    const data = await response.json();
+    return data;
+  }
+
+  function populateTable(data) {
+    const tbody = document.querySelector("#dataTable tbody");
+    tbody.innerHTML = ""; // Clear existing data
+    console.log(data);
+    data.forEach((row) => {
+      const tr = document.createElement("tr");
+      tr.classList.add("hover");
+
+      // On Click, pass the audio_filepath to the Vue component
+      tr.addEventListener("click", () => {
+        
+        Array.from(document.getElementsByTagName('tr')).forEach((t) => {
+          t.classList.remove('border-2');
+          t.classList.remove('border-black');
+
+        });
+
+        tr.classList.add('border-2');
+        tr.classList.add('border-black');
+
+        selectedFilepath = row['audio_filepath'] // Update the selected row
+        const event = new CustomEvent('audio-selected', { detail: {
+          "text": row["text"],
+           "audio_filepath": row["audio_filepath"],
+           "dataset": dataset.name
+        } });
+        window.dispatchEvent(event); // Dispatch an event with the selected file path
+      });
+
+      dataset.columns.forEach((column) => {
+        const td = document.createElement("td");
+        td.textContent = row[column];
+        tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    });
+  }
+
+  async function loadFilters() {
+    const response = await fetch(
+      `${url}/filters/${dataset.name}`
+    );
+    const filters = await response.json();
+    Object.entries(filters).forEach(([filter, options]) => {
+      const selectElement = document.querySelector(`select[data-filter="${filter}"]`);
+      
+      options.forEach((option) => {
+        const optionElement = document.createElement("option");
+        optionElement.value = option;
+        optionElement.textContent = option;
+        selectElement.appendChild(optionElement);
+      });
+
+      const choices = new Choices(selectElement, {
+        removeItemButton: true,
+        placeholder: true,
+        placeholderValue: `Select ${filter}`,
+        searchEnabled: true,
+        
+      });
+      choicesInstances.push(choices);
+    });
+  }
+
+  function getSelectedFilters() {
+    const filters = {};
+    choicesInstances.forEach(choices => {
+      const filterName = choices.passedElement.element.dataset.filter;
+      const selectedOptions = choices.getValue(true);
+      if (selectedOptions.length > 0) {
+        filters[filterName] = selectedOptions;
+      }
+    });
+    return filters;
+  }
+
+  async function init() {
+    await loadFilters();
+    const initialData = await loadData();
+    populateTable(initialData.data);
+  }
+
+  document.addEventListener("DOMContentLoaded", init);
+
+  document.querySelector("#loadMore").addEventListener("click", async () => {
+    const filters = getSelectedFilters();
+    const data = await loadData(filters);
+    populateTable(data.data);
+  });
+
+  document.querySelector("#filters").addEventListener("change", async () => {
+    const filters = getSelectedFilters();
+    const data = await loadData(filters);
+    populateTable(data.data);
+  });
+})();</script>  </body></html>
