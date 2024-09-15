@@ -20,18 +20,25 @@ const { title, home_link, links } = Astro.props;
     <ul class="menu menu-horizontal px-1">
       <li><a href={home_link}>Home</a></li>
       <li>
-        <details>
-          <summary>Explore</summary>
-          <ul class="bg-base-100 rounded-t-none p-2">
-            {
-              links.map((link) => (
-                <li>
-                  <a href={link.link}>{link.name}</a>
-                </li>
-              ))
-            }
-          </ul>
-        </details>
+        {
+          links.length > 1 && (
+            <details>
+              <summary>Explore</summary>
+              <ul class="bg-base-100 rounded-t-none p-2">
+                {links.map((link) => (
+                  <li>
+                    <a href={link.link}>{link.name}</a>
+                  </li>
+                ))}
+              </ul>
+            </details>
+          )
+        }
+        {
+          links.length === 1 && links[0].link && (
+            <a href={links[0].link}>{links[0].name}</a>
+          )
+        }
       </li>
     </ul>
   </div>
