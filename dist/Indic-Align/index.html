@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="en" data-theme="mytheme"> <head><meta charset="UTF-8"><meta name="description" content="AI4Bharat Datasets"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v4.14.5"><!-- Add this to your HTML file --><!-- <link
+s      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+    /> --><script type="module" src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script><title>Indic-Align</title><link rel="stylesheet" href="/astro/explore.D-UsDqG8.css"></head> <body class="container mx-auto px-4 mb-4 md:mb-8">  <div class="navbar bg-base-100"> <div class="flex-1"> <a href="/Indic-Align" class="text-3xl font-bold bg-gradient-to-r from-orange-600 via-red-500 to-black inline-block text-transparent bg-clip-text">Indic-Align</a> </div> <div class="flex-none"> <ul class="menu menu-horizontal px-1"> <li><a href="/Indic-Align">Home</a></li> <li>  <a href="/Indic-Align/explore">Explore</a> </li> </ul> </div> </div> <h2 class="flex justify-center text-lg md:text-2xl text-secondary font-semibold md:font-normal"> A diverse collection of Instruction and Toxic alignment datasets for 14 Indic Languages. </h2> <div class="divider"> <span class="text-sm font-semibold">Description</span> </div> <p class="text my-4 font-normal"> Despite the considerable advancements in English LLMs, the progress in building comparable models for other languages has been hindered due to the scarcity of tailored resources. Our work aims to bridge this divide by introducing an expansive suite of resources specifically designed for the development of Indic LLMs, covering 22 languages, containing a total of 251B tokens and 74.8M instruction-response pairs. Recognizing the importance of both data quality and quantity, our approach combines highly curated manually verified data, unverified yet valuable data, and synthetic data. We build a clean, open-source pipeline for curating pre-training data from diverse sources, including websites, PDFs, and videos, incorporating best practices for crawling, cleaning, flagging, and deduplication. For instruction-fine tuning, we amalgamate existing Indic datasets, translate/transliterate English datasets into Indian languages, and utilize LLaMa2 and Mixtral models to create conversations grounded in articles from Indian Wikipedia and Wikihow. Additionally, we address toxicity alignment by generating toxic prompts for multiple scenarios and then generate non-toxic responses by feeding these toxic prompts to an aligned LLaMa2 model. We hope that the datasets, tools, and resources released as a part of this work will not only propel the research and development of Indic LLMs but also establish an open-source blueprint for extending such efforts to other languages. The data and other artifacts created as part of this work are released with permissive licenses. </p> <ul class="menu menu-horizontal bg-base-200 rounded-box flex flex-row justify-center"> <li> <a class="link link-info" href="/Indic-Align/explore">
+Explore Dataset
+</a> </li> <li> <a class="link link-info" href="https://arxiv.org/abs/2403.06350" target="_blank">
+Read Paper
+</a> </li> </ul> <div class="divider" id="downloads"> <span class="text-sm font-semibold"> Downloads </span> </div> <article class="prose prose-headings:text-primary prose-a:text-secondary prose-li:marker:text-accent mx-auto"> 
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Resource name</th><th>link</th></tr></thead><tbody><tr><td>Dataset</td><td><a href="https://huggingface.co/datasets/ai4bharat/indic-align">Indic-Align - HF</a></td></tr></tbody></table> </article> <div class="divider" id="details"> <span class="text-sm font-semibold"> Details </span> </div> <article class="prose prose-headings:text-primary prose-a:text-secondary prose-li:marker:text-accent max-w-none"> <h1 id="indicalign">IndicAlign</h1>
+<p>A diverse collection of Instruction and Toxic alignment datasets for 14 Indic Languages. The collection comprises of:</p>
+<ul>
+<li><strong>IndicAlign - Instruct</strong>
+<ul>
+<li>Indic-ShareLlama</li>
+<li>Dolly-T</li>
+<li>OpenAssistant-T</li>
+<li>WikiHow</li>
+<li>IndoWordNet</li>
+<li>Anudesh</li>
+<li>Wiki-Conv</li>
+<li>Wiki-Chat</li>
+</ul>
+</li>
+<li><strong>IndicAlign - Toxic</strong>
+<ul>
+<li>HHRLHF-T</li>
+<li>Toxic-Matrix</li>
+</ul>
+</li>
+</ul>
+<h2 id="citation">Citation</h2>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bibtex"><code><span class="line"><span style="color:#FF79C6">@article</span><span style="color:#F8F8F2">{</span><span style="color:#8BE9FD;font-style:italic">khan2024indicllmsuite</span><span style="color:#F8F8F2">,</span></span>
+<span class="line"><span style="color:#8BE9FD">  title</span><span style="color:#FF79C6">   =</span><span style="color:#E9F284"> {</span><span style="color:#F8F8F2">IndicLLMSuite: A Blueprint for Creating Pre-training and Fine-Tuning Datasets for Indian Languages</span><span style="color:#E9F284">}</span><span style="color:#F8F8F2">,</span></span>
+<span class="line"><span style="color:#8BE9FD">  author</span><span style="color:#FF79C6">  =</span><span style="color:#E9F284"> {</span><span style="color:#F8F8F2">Mohammed Safi Ur Rahman Khan and Priyam Mehta and Ananth Sankar and Umashankar Kumaravelan and Sumanth Doddapaneni and Suriyaprasaad G and Varun Balan G and Sparsh Jain and Anoop Kunchukuttan and Pratyush Kumar and Raj Dabre and Mitesh M. Khapra</span><span style="color:#E9F284">}</span><span style="color:#F8F8F2">,</span></span>
+<span class="line"><span style="color:#8BE9FD">  year</span><span style="color:#FF79C6">    =</span><span style="color:#E9F284"> {</span><span style="color:#F8F8F2">2024</span><span style="color:#E9F284">}</span><span style="color:#F8F8F2">,</span></span>
+<span class="line"><span style="color:#8BE9FD">  journal</span><span style="color:#FF79C6"> =</span><span style="color:#E9F284"> {</span><span style="color:#F8F8F2">arXiv preprint arXiv: 2403.06350</span><span style="color:#E9F284">}</span></span>
+<span class="line"><span style="color:#F8F8F2">}</span></span>
+<span class="line"></span></code></pre> </article>  </body></html>

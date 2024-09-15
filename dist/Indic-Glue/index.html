@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="en" data-theme="mytheme"> <head><meta charset="UTF-8"><meta name="description" content="AI4Bharat Datasets"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v4.14.5"><!-- Add this to your HTML file --><!-- <link
+s      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+    /> --><script type="module" src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script><title>Indic-Glue</title><link rel="stylesheet" href="/astro/explore.D-UsDqG8.css"></head> <body class="container mx-auto px-4 mb-4 md:mb-8">  <div class="navbar bg-base-100"> <div class="flex-1"> <a href="/Indic-Glue" class="text-3xl font-bold bg-gradient-to-r from-orange-600 via-red-500 to-black inline-block text-transparent bg-clip-text">Indic-Glue</a> </div> <div class="flex-none"> <ul class="menu menu-horizontal px-1"> <li><a href="/Indic-Glue">Home</a></li> <li>  <a href="/Indic-Glue/explore">Explore</a> </li> </ul> </div> </div> <h2 class="flex justify-center text-lg md:text-2xl text-secondary font-semibold md:font-normal"> A natural language benchmark for Indian languages. </h2> <div class="divider"> <span class="text-sm font-semibold">Description</span> </div> <p class="text my-4 font-normal"> IndicGLUE is a natural language understanding benchmark for Indian languages. It contains a wide variety of tasks and covers 11 major Indian languages - as, bn, gu, hi, kn, ml, mr, or, pa, ta, te. </p> <ul class="menu menu-horizontal bg-base-200 rounded-box flex flex-row justify-center"> <li> <a class="link link-info" href="/Indic-Glue/explore">
+Explore Dataset
+</a> </li> <li> <a class="link link-info" href="https://aclanthology.org/2020.findings-emnlp.445.pdf" target="_blank">
+Read Paper
+</a> </li> </ul> <div class="divider" id="downloads"> <span class="text-sm font-semibold"> Downloads </span> </div> <article class="prose prose-headings:text-primary prose-a:text-secondary prose-li:marker:text-accent mx-auto"> 
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Resource name</th><th>link</th></tr></thead><tbody><tr><td>Dataset</td><td><a href="https://huggingface.co/datasets/ai4bharat/indic_glue">Indic-Glue - HF</a></td></tr></tbody></table> </article> <div class="divider" id="details"> <span class="text-sm font-semibold"> Details </span> </div> <article class="prose prose-headings:text-primary prose-a:text-secondary prose-li:marker:text-accent max-w-none"> <h3 id="dataset-summary">Dataset Summary</h3>
+<p>IndicGLUE is a natural language understanding benchmark for Indian languages. It contains a wide
+variety of tasks and covers 11 major Indian languages - as, bn, gu, hi, kn, ml, mr, or, pa, ta, te.
+The Winograd Schema Challenge (Levesque et al., 2011) is a reading comprehension task
+in which a system must read a sentence with a pronoun and select the referent of that pronoun from
+a list of choices. The examples are manually constructed to foil simple statistical methods: Each
+one is contingent on contextual information provided by a single word or phrase in the sentence.
+To convert the problem into sentence pair classification, we construct sentence pairs by replacing
+the ambiguous pronoun with each possible referent. The task is to predict if the sentence with the
+pronoun substituted is entailed by the original sentence. We use a small evaluation set consisting of
+new examples derived from fiction books that was shared privately by the authors of the original
+corpus. While the included training set is balanced between two classes, the test set is imbalanced
+between them (65% not entailment). Also, due to a data quirk, the development set is adversarial:
+hypotheses are sometimes shared between training and development examples, so if a model memorizes the
+training examples, they will predict the wrong label on corresponding development set
+example. As with QNLI, each example is evaluated separately, so there is not a systematic correspondence
+between a model’s score on this task and its score on the unconverted original task. We
+call converted dataset WNLI (Winograd NLI). This dataset is translated and publicly released for 3
+Indian languages by AI4Bharat.</p>
+<h3 id="citation-information">Citation Information</h3>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>@inproceedings{kakwani-etal-2020-indicnlpsuite,</span></span>
+<span class="line"><span>    title = "{I}ndic{NLPS}uite: Monolingual Corpora, Evaluation Benchmarks and Pre-trained Multilingual Language Models for {I}ndian Languages",</span></span>
+<span class="line"><span>    author = "Kakwani, Divyanshu  and</span></span>
+<span class="line"><span>      Kunchukuttan, Anoop  and</span></span>
+<span class="line"><span>      Golla, Satish  and</span></span>
+<span class="line"><span>      N.C., Gokul  and</span></span>
+<span class="line"><span>      Bhattacharyya, Avik  and</span></span>
+<span class="line"><span>      Khapra, Mitesh M.  and</span></span>
+<span class="line"><span>      Kumar, Pratyush",</span></span>
+<span class="line"><span>    booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2020",</span></span>
+<span class="line"><span>    month = nov,</span></span>
+<span class="line"><span>    year = "2020",</span></span>
+<span class="line"><span>    address = "Online",</span></span>
+<span class="line"><span>    publisher = "Association for Computational Linguistics",</span></span>
+<span class="line"><span>    url = "https://aclanthology.org/2020.findings-emnlp.445",</span></span>
+<span class="line"><span>    doi = "10.18653/v1/2020.findings-emnlp.445",</span></span>
+<span class="line"><span>    pages = "4948--4961",</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>@inproceedings{Levesque2011TheWS,</span></span>
+<span class="line"><span>title={The Winograd Schema Challenge},</span></span>
+<span class="line"><span>author={H. Levesque and E. Davis and L. Morgenstern},</span></span>
+<span class="line"><span>booktitle={KR},</span></span>
+<span class="line"><span>year={2011}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre> </article>  </body></html>

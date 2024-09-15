@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="en" data-theme="mytheme"> <head><meta charset="UTF-8"><meta name="description" content="AI4Bharat Datasets"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v4.14.5"><!-- Add this to your HTML file --><!-- <link
+s      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+    /> --><script type="module" src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script><title>Explore Indic-Glue</title><link rel="stylesheet" href="/astro/explore.D-UsDqG8.css"></head> <body class="container mx-auto px-4 mb-4 md:mb-8"> <div class="navbar bg-base-100"> <div class="flex-1"> <a href="/Indic-Glue" class="text-3xl font-bold bg-gradient-to-r from-orange-600 via-red-500 to-black inline-block text-transparent bg-clip-text">Indic-Glue</a> </div> <div class="flex-none"> <ul class="menu menu-horizontal px-1"> <li><a href="/Indic-Glue">Home</a></li> <li>  <a href="/Indic-Glue/explore">Explore</a> </li> </ul> </div> </div><div class="divider"><span class="font-bold">Data</span></div><div id="filters" class="flex md:flex-row flex-col gap-4"> <div class="filter-group w-full"> <label class="text-xs mb-1">language</label> <select multiple class="multi-select w-full" data-filter="language"> <!-- Options will be populated dynamically --> </select> </div> </div> <div class="overflow-x-auto"> <table id="dataTable" class="table"> <thead> <tr> <th>premise</th><th>choice1</th><th>choice2</th><th>question</th><th>label</th><th>language</th> </tr> </thead> <tbody> <!-- Table body will be populated dynamically --> </tbody> </table> </div> <button id="loadMore" class="btn btn-primary my-4 w-full">Load More</button> <!-- Container for the AudioWaveSurfer Vue component -->  <script>(function(){const dataset = {"columns":["premise","choice1","choice2","question","label","language"],"description":"IndicGLUE is a natural language understanding benchmark for Indian languages. It contains a wide variety of tasks and covers 11 major Indian languages - as, bn, gu, hi, kn, ml, mr, or, pa, ta, te.","download_link":"https://huggingface.co/datasets/ai4bharat/indic_glue","explore_link":"/Indic-Glue/explore","filters":["language"],"name":"Indic-Glue","paper_link":"https://aclanthology.org/2020.findings-emnlp.445.pdf","path_to_csv":"data/csv/indic_glue.csv","subtitle":"A natural language benchmark for Indian languages."};
+const url = "https://datasets.backend.ai4bharat.org/api";
+
+  let choicesInstances = [];
+  // let selectedRow = ''; // Variable to hold the selected audio file path
+
+  async function loadData(filters = {}) {
+    const queryParams = new URLSearchParams();
+    Object.entries(filters).forEach(([key, values]) => {
+      values.forEach(value => queryParams.append(key, value));
+    });
+    const response = await fetch(
+      `${url}/data/${dataset.name}?${queryParams}`
+    );
+    const data = await response.json();
+    return data;
+  }
+
+  function populateTable(data) {
+    const tbody = document.querySelector("#dataTable tbody");
+    tbody.innerHTML = ""; // Clear existing data
+    console.log(data);
+    data.forEach((row) => {
+      const tr = document.createElement("tr");
+      tr.classList.add("hover");
+
+      // On Click, pass the audio_filepath to the Vue component
+      tr.addEventListener("click", () => {
+        
+        Array.from(document.getElementsByTagName('tr')).forEach((t) => {
+          t.classList.remove('border-2');
+          t.classList.remove('border-black');
+
+        });
+
+        tr.classList.add('border-2');
+        tr.classList.add('border-black');
+
+        selectedFilepath = row['audio_filepath'] // Update the selected row
+        const event = new CustomEvent('audio-selected', { detail: {
+          "text": row["text"],
+           "audio_filepath": row["audio_filepath"],
+           "dataset": dataset.name
+        } });
+        window.dispatchEvent(event); // Dispatch an event with the selected file path
+      });
+
+      dataset.columns.forEach((column) => {
+        const td = document.createElement("td");
+        td.textContent = row[column];
+        tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    });
+  }
+
+  async function loadFilters() {
+    const response = await fetch(
+      `${url}/filters/${dataset.name}`
+    );
+    const filters = await response.json();
+    Object.entries(filters).forEach(([filter, options]) => {
+      const selectElement = document.querySelector(`select[data-filter="${filter}"]`);
+      
+      options.forEach((option) => {
+        const optionElement = document.createElement("option");
+        optionElement.value = option;
+        optionElement.textContent = option;
+        selectElement.appendChild(optionElement);
+      });
+
+      const choices = new Choices(selectElement, {
+        removeItemButton: true,
+        placeholder: true,
+        placeholderValue: `Select ${filter}`,
+        searchEnabled: true,
+        
+      });
+      choicesInstances.push(choices);
+    });
+  }
+
+  function getSelectedFilters() {
+    const filters = {};
+    choicesInstances.forEach(choices => {
+      const filterName = choices.passedElement.element.dataset.filter;
+      const selectedOptions = choices.getValue(true);
+      if (selectedOptions.length > 0) {
+        filters[filterName] = selectedOptions;
+      }
+    });
+    return filters;
+  }
+
+  async function init() {
+    await loadFilters();
+    const initialData = await loadData();
+    populateTable(initialData.data);
+  }
+
+  document.addEventListener("DOMContentLoaded", init);
+
+  document.querySelector("#loadMore").addEventListener("click", async () => {
+    const filters = getSelectedFilters();
+    const data = await loadData(filters);
+    populateTable(data.data);
+  });
+
+  document.querySelector("#filters").addEventListener("change", async () => {
+    const filters = getSelectedFilters();
+    const data = await loadData(filters);
+    populateTable(data.data);
+  });
+})();</script> </body></html>
