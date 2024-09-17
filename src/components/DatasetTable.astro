@@ -13,7 +13,7 @@ import AudioWaveSurfer from './AudioWaveSurfer.vue';
 ---
 
 
-
+{dataset.filters && 
 <div id="filters" class="flex md:flex-row flex-col gap-4">
   {dataset.filters.map((filter) => (
     <div class="filter-group w-full">
@@ -44,7 +44,7 @@ import AudioWaveSurfer from './AudioWaveSurfer.vue';
 {dataset.is_audio && (
   <AudioWaveSurfer client:only="vue"></AudioWaveSurfer>
 )}
-
+}
 <script is:inline define:vars={{ dataset, url }}>
   let choicesInstances = [];
   // let selectedRow = ''; // Variable to hold the selected audio file path
