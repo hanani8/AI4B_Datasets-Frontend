@@ -4,6 +4,7 @@ title: bpcc
 
 | Source Language | Target Language | Filename                 | Download |
 | --------------- | --------------- | ------------------------ | -------- |
+| English         | All             | All.tar.gz               | Download |
 | English         | Kashmiri        | eng_Latn-kas_Arab.tar.gz | Download |
 | English         | Urdu            | eng_Latn-urd_Arab.tar.gz | Download |
 | English         | Maithili        | eng_Latn-mai_Deva.tar.gz | Download |
