@@ -5,4 +5,97 @@ s      rel="stylesheet"
 Explore Dataset
 </a> </li> <li> <a class="link link-info" href="https://arxiv.org/abs/2208.12666" target="_blank">
 Read Paper
-</a> </li> </ul> <div class="divider" id="downloads"> <span class="text-sm font-semibold"> Downloads </span> </div> <article class="prose prose-headings:text-primary prose-a:text-secondary prose-li:marker:text-accent mx-auto">  </article> <div class="divider" id="details"> <span class="text-sm font-semibold"> Details </span> </div> <article class="prose prose-headings:text-primary prose-a:text-secondary prose-li:marker:text-accent max-w-none">  </article>  </body></html>
+</a> </li> </ul> <div class="divider" id="downloads"> <span class="text-sm font-semibold"> Downloads </span> </div> <article class="prose prose-headings:text-primary prose-a:text-secondary prose-li:marker:text-accent mx-auto"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Language</th><th>Download Audio files</th></tr></thead><tbody><tr><td>bengali</td><td><a href="https://web.archive.org/web/20240415064756/https://indic-asr-public.objectstore.e2enetworks.net/bengali.zip">Download</a></td></tr><tr><td>gujarati</td><td><a href="https://web.archive.org/web/20240415064756/https://indic-asr-public.objectstore.e2enetworks.net/gujarati.zip">Download</a></td></tr><tr><td>hindi</td><td><a href="https://web.archive.org/web/20240415064756/https://indic-asr-public.objectstore.e2enetworks.net/hindi.zip">Download</a></td></tr><tr><td>kannada</td><td><a href="https://web.archive.org/web/20240415064756/https://indic-asr-public.objectstore.e2enetworks.net/kannada.zip">Download</a></td></tr><tr><td>malayalam</td><td><a href="https://web.archive.org/web/20240415064756/https://indic-asr-public.objectstore.e2enetworks.net/malayalam.zip">Download</a></td></tr><tr><td>marathi</td><td><a href="https://web.archive.org/web/20240415064756/https://indic-asr-public.objectstore.e2enetworks.net/marathi.zip">Download</a></td></tr><tr><td>odia</td><td><a href="https://web.archive.org/web/20240415064756/https://indic-asr-public.objectstore.e2enetworks.net/odia.zip">Download</a></td></tr><tr><td>punjabi</td><td><a href="https://web.archive.org/web/20240415064756/https://indic-asr-public.objectstore.e2enetworks.net/punjabi.zip">Download</a></td></tr><tr><td>sanskrit</td><td><a href="https://web.archive.org/web/20240415064756/https://indic-asr-public.objectstore.e2enetworks.net/sanskrit.zip">Download</a></td></tr><tr><td>tamil</td><td><a href="https://web.archive.org/web/20240415064756/https://indic-asr-public.objectstore.e2enetworks.net/tamil.zip">Download</a></td></tr><tr><td>telugu</td><td><a href="https://web.archive.org/web/20240415064756/https://indic-asr-public.objectstore.e2enetworks.net/telugu.zip">Download</a></td></tr><tr><td>urdu</td><td><a href="https://web.archive.org/web/20240415064756/https://indic-asr-public.objectstore.e2enetworks.net/urdu.zip">Download</a></td></tr></tbody></table> </article> <div class="divider" id="details"> <span class="text-sm font-semibold"> Details </span> </div> <article class="prose prose-headings:text-primary prose-a:text-secondary prose-li:marker:text-accent max-w-none"> <h2 id="downloads">Downloads</h2>
+<h3 id="text-transcripts-format">Text Transcripts Format</h3>
+<p>Download transcripts - <a href="https://web.archive.org/web/20240415064756/https://indic-asr-public.objectstore.e2enetworks.net/shrutilipi/shrutilipi_fairseq.zip">Link</a></p>
+<p>The transcripts and audio paths are provided in fairseq format, which can be directly used for training models using the fairseq library. It consists of 3 files –</p>
+<p><code>train.tsv</code> file – Each line in the file contains the relative path to an audio file and the number of frames in the audio separated by tabs. The file also contains a header which has the absolute path to the dataset.</p>
+<p><code>train.wrd</code> (word) file – each line contains the transcription for the audio file in the ‘.tsv’ file which is corresponding to the same line number (ignoring the header in the ‘.tsv’ file).</p>
+<p><code>train.ltr</code> (letter) file – Tokenized transcriptions for the corresponding sentences in ‘wrd’ file. (tokenized to characters)</p>
+<h3 id="audio-dataset-format">Audio Dataset Format</h3>
+<p>The audio files for each news bulletin are present in separate folders.
+The audio files are stored in wav format sampled at 16KHz.
+The audio filenames are numbered by sentence ids in the bulletin, eg. sent_1.wav.</p>
+<p>The folder structure is as follows -</p>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>data</span></span>
+<span class="line"><span>├── bengali</span></span>
+<span class="line"><span>│   ├── &#x3C;bulletin-1></span></span>
+<span class="line"><span>│   │   ├── sent_1.wav</span></span>
+<span class="line"><span>│   │   ├── sent_2.wav</span></span>
+<span class="line"><span>│   │   ├── ...</span></span>
+<span class="line"><span>│   │   └── sent_n.txt</span></span>
+<span class="line"><span>│   ├── &#x3C;bulletin-2></span></span>
+<span class="line"><span>│   └── ...</span></span>
+<span class="line"><span>├── gujarati</span></span>
+<span class="line"><span>├── ...</span></span>
+<span class="line"><span></span></span></code></pre>
+<h2 id="citation">Citation</h2>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>@misc{https://doi.org/10.48550/arxiv.2208.12666,</span></span>
+<span class="line"><span>  doi = {10.48550/ARXIV.2208.12666},</span></span>
+<span class="line"><span>  url = {https://arxiv.org/abs/2208.12666},</span></span>
+<span class="line"><span>  author = {Bhogale, Kaushal Santosh and Raman, Abhigyan and Javed, Tahir and Doddapaneni, Sumanth and Kunchukuttan, Anoop and Kumar, Pratyush and Khapra, Mitesh M.},</span></span>
+<span class="line"><span>  title = {Effectiveness of Mining Audio and Text Pairs from Public Data for Improving ASR Systems for Low-Resource Languages},</span></span>
+<span class="line"><span>  publisher = {arXiv},</span></span>
+<span class="line"><span>  year = {2022},</span></span>
+<span class="line"><span>  copyright = {arXiv.org perpetual, non-exclusive license}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span></code></pre>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>We would like to thank the Ministry of Electronics and Information Technology (MeitY) of the Government of India and the Centre for Development of Advanced Computing (C-DAC), Pune for generously supporting this work and providing us access to multiple GPU nodes on the Param Siddhi Supercomputer. We would like to thank the EkStep Foundation and Nilekani Philanthropies for their generous grant which went into hiring human resources as well as cloud resources needed for this work. We would like to thank Megh Makhwana from Nvidia for helping in training Conformer-based ASR models. We would like to thank the EkStep Foundation for providing the Tarini dataset. We would like to thank Janki Nawale and Anupama Sujatha from AI4Bharat for helping in coordinating the annotation task, and extend thanks to all the annotators of AI4Bharat team.</p> </article>  </body></html>
