@@ -2,11 +2,9 @@
 title: Shrutilipi
 ---
 
-## Downloads
-
 ### Text Transcripts Format
 
-Download transcripts - [Link](https://web.archive.org/web/20240415064756/https://indic-asr-public.objectstore.e2enetworks.net/shrutilipi/shrutilipi_fairseq.zip)
+Download transcripts - [Link](https://indic-asr-public.objectstore.e2enetworks.net/shrutilipi/shrutilipi_fairseq.zip)
 
 The transcripts and audio paths are provided in fairseq format, which can be directly used for training models using the fairseq library. It consists of 3 files –
 
