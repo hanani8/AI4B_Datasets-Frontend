@@ -3,27 +3,27 @@ title: "IndicVoices-R"
 slug: IndicVoices-R
 ---
 
-| Resource name | link                                                                                                   |
-| ------------- | ------------------------------------------------------------------------------------------------------ |
-| Assamese      | [Assamese.tar](https://indic-tts-public.objectstore.e2enetworks.net/data/indicvoices_r/Assamese.tar)   |
-| Bengali       | [Bengali.tar](https://indic-tts-public.objectstore.e2enetworks.net/data/indicvoices_r/Bengali.tar)     |
-| Bodo          | [Bodo.tar](https://indic-tts-public.objectstore.e2enetworks.net/data/indicvoices_r/Bodo.tar)           |
-| Dogri         | [Dogri.tar](https://indic-tts-public.objectstore.e2enetworks.net/data/indicvoices_r/Dogri.tar)         |
-| Gujarati      | [Gujarati.tar](https://indic-tts-public.objectstore.e2enetworks.net/data/indicvoices_r/Gujarati.tar)   |
-| Hindi         | [Hindi.tar](https://indic-tts-public.objectstore.e2enetworks.net/data/indicvoices_r/Hindi.tar)         |
-| Kannada       | [Kannada.tar](https://indic-tts-public.objectstore.e2enetworks.net/data/indicvoices_r/Kannada.tar)     |
-| Kashmiri      | [Kashmiri.tar](https://indic-tts-public.objectstore.e2enetworks.net/data/indicvoices_r/Kashmiri.tar)   |
-| Konkani       | [Konkani.tar](https://indic-tts-public.objectstore.e2enetworks.net/data/indicvoices_r/Konkani.tar)     |
-| Maithili      | [Maithili.tar](https://indic-tts-public.objectstore.e2enetworks.net/data/indicvoices_r/Maithili.tar)   |
-| Malayalam     | [Malayalam.tar](https://indic-tts-public.objectstore.e2enetworks.net/data/indicvoices_r/Malayalam.tar) |
-| Marathi       | [Marathi.tar](https://indic-tts-public.objectstore.e2enetworks.net/data/indicvoices_r/Marathi.tar)     |
-| Manipuri      | [Manipuri.tar](https://indic-tts-public.objectstore.e2enetworks.net/data/indicvoices_r/Manipuri.tar)   |
-| Nepali        | [Nepali.tar](https://indic-tts-public.objectstore.e2enetworks.net/data/indicvoices_r/Nepali.tar)       |
-| Odia          | [Odia.tar](https://indic-tts-public.objectstore.e2enetworks.net/data/indicvoices_r/Odia.tar)           |
-| Punjabi       | [Punjabi.tar](https://indic-tts-public.objectstore.e2enetworks.net/data/indicvoices_r/Punjabi.tar)     |
-| Sanskrit      | [Sanskrit.tar](https://indic-tts-public.objectstore.e2enetworks.net/data/indicvoices_r/Sanskrit.tar)   |
-| Santali       | [Santali.tar](https://indic-tts-public.objectstore.e2enetworks.net/data/indicvoices_r/Santali.tar)     |
-| Sindhi        | [Sindhi.tar](https://indic-tts-public.objectstore.e2enetworks.net/data/indicvoices_r/Sindhi.tar)       |
-| Tamil         | [Tamil.tar](https://indic-tts-public.objectstore.e2enetworks.net/data/indicvoices_r/Tamil.tar)         |
-| Telugu        | [Telugu.tar](https://indic-tts-public.objectstore.e2enetworks.net/data/indicvoices_r/Telugu.tar)       |
-| Urdu          | [Urdu.tar](https://indic-tts-public.objectstore.e2enetworks.net/data/indicvoices_r/Urdu.tar)           |
+| Resource name | link                                                                                               |
+| ------------- | -------------------------------------------------------------------------------------------------- |
+| Assamese      | [Assamese.tar.gz](https://indic-tts-public.objectstore.e2enetworks.net/data/ivr/Assamese.tar.gz)   |
+| Bengali       | [Bengali.tar.gz](https://indic-tts-public.objectstore.e2enetworks.net/data/ivr/Bengali.tar.gz)     |
+| Bodo          | [Bodo.tar.gz](https://indic-tts-public.objectstore.e2enetworks.net/data/ivr/Bodo.tar.gz)           |
+| Dogri         | [Dogri.tar.gz](https://indic-tts-public.objectstore.e2enetworks.net/data/ivr/Dogri.tar.gz)         |
+| Gujarati      | [Gujarati.tar.gz](https://indic-tts-public.objectstore.e2enetworks.net/data/ivr/Gujarati.tar.gz)   |
+| Hindi         | [Hindi.tar.gz](https://indic-tts-public.objectstore.e2enetworks.net/data/ivr/Hindi.tar.gz)         |
+| Kannada       | [Kannada.tar.gz](https://indic-tts-public.objectstore.e2enetworks.net/data/ivr/Kannada.tar.gz)     |
+| Kashmiri      | [Kashmiri.tar.gz](https://indic-tts-public.objectstore.e2enetworks.net/data/ivr/Kashmiri.tar.gz)   |
+| Konkani       | [Konkani.tar.gz](https://indic-tts-public.objectstore.e2enetworks.net/data/ivr/Konkani.tar.gz)     |
+| Maithili      | [Maithili.tar.gz](https://indic-tts-public.objectstore.e2enetworks.net/data/ivr/Maithili.tar.gz)   |
+| Malayalam     | [Malayalam.tar.gz](https://indic-tts-public.objectstore.e2enetworks.net/data/ivr/Malayalam.tar.gz) |
+| Marathi       | [Marathi.tar.gz](https://indic-tts-public.objectstore.e2enetworks.net/data/ivr/Marathi.tar.gz)     |
+| Manipuri      | [Manipuri.tar.gz](https://indic-tts-public.objectstore.e2enetworks.net/data/ivr/Manipuri.tar.gz)   |
+| Nepali        | [Nepali.tar.gz](https://indic-tts-public.objectstore.e2enetworks.net/data/ivr/Nepali.tar.gz)       |
+| Odia          | [Odia.tar.gz](https://indic-tts-public.objectstore.e2enetworks.net/data/ivr/Odia.tar.gz)           |
+| Punjabi       | [Punjabi.tar.gz](https://indic-tts-public.objectstore.e2enetworks.net/data/ivr/Punjabi.tar.gz)     |
+| Sanskrit      | [Sanskrit.tar.gz](https://indic-tts-public.objectstore.e2enetworks.net/data/ivr/Sanskrit.tar.gz)   |
+| Santali       | [Santali.tar.gz](https://indic-tts-public.objectstore.e2enetworks.net/data/ivr/Santali.tar.gz)     |
+| Sindhi        | [Sindhi.tar.gz](https://indic-tts-public.objectstore.e2enetworks.net/data/ivr/Sindhi.tar.gz)       |
+| Tamil         | [Tamil.tar.gz](https://indic-tts-public.objectstore.e2enetworks.net/data/ivr/Tamil.tar.gz)         |
+| Telugu        | [Telugu.tar.gz](https://indic-tts-public.objectstore.e2enetworks.net/data/ivr/Telugu.tar.gz)       |
+| Urdu          | [Urdu.tar.gz](https://indic-tts-public.objectstore.e2enetworks.net/data/ivr/Urdu.tar.gz)           |
